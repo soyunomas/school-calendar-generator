@@ -10,7 +10,13 @@ Este proyecto proporciona una interfaz web interactiva para crear calendarios es
 
 ## 🖼️ Captura de Pantalla / Demo
 
+* Captura de pantalla del calendario para rellenar en papel.
+
 ![Captura de Pantalla del Generador de Calendarios](screenshot.png) 
+
+* El calendario escolar comenzando en septiembre. 
+
+![Captura de Pantalla del Generador de Calendarios](screenshot1.png) 
 
 Puedes probar la demo en vivo aquí:
 
