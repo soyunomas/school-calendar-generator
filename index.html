@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Calendarios Escolares y Mensuales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --calendar-bg: #ffffff;
+            --calendar-text-color: #000000;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #cccccc;
+            --calendar-header-text: #000000;
+            --calendar-day-number-color: #333333;
+            --calendar-weekend-bg: #e0e0e0;
+            --calendar-empty-cell-bg: #f0f0f0;
+            --calendar-border-width: 1.5px;
+            --calendar-font-family: 'Lato', sans-serif;
+            --calendar-font-size-base: 1rem;
+            --calendar-day-number-size: 0.8em;
+        }
+
+        body.theme-default {
+             --calendar-bg: #ffffff;
+             --calendar-text-color: #212529;
+             ---calendar-border-color: #000000;
+             --calendar-header-bg: #e9ecef;
+             --calendar-header-text: #495057;
+             --calendar-day-number-color: #6c757d;
+             --calendar-weekend-bg: #f8f9fa;
+             --calendar-empty-cell-bg: #ffffff;
+             --calendar-border-width: 1px;
+        }
+        body.theme-contrast {} /* Styles applied by default */
+
+        /* --- Temas Pastel Adicionales (Alto Contraste) --- */
+        body.theme-pastel-rose {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #ffe4e1;
+            --calendar-weekend-bg: #fff5f8;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #333;
+            --calendar-day-number-color: #555;
+            --calendar-border-width: 1px;
+        }
+        body.theme-pastel-rose #monthly-main-title { color: #c71585; }
+
+        body.theme-pastel-mint {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #d4f0d4;
+            --calendar-weekend-bg: #f5fff8;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #2e8b57;
+            --calendar-day-number-color: #333;
+        }
+        body.theme-pastel-mint #monthly-main-title { color: #2e8b57; }
+
+        body.theme-serene-sky {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #e0f0ff;
+            --calendar-weekend-bg: #f5faff;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #191970;
+            --calendar-day-number-color: #4682b4;
+        }
+        body.theme-serene-sky #monthly-main-title { color: #4682b4; }
+
+        body.theme-soft-lavender {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #d8d8f0;
+            --calendar-weekend-bg: #f0f0fc;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #483d8b;
+            --calendar-day-number-color: #555;
+        }
+        body.theme-soft-lavender #monthly-main-title { color: #483d8b; }
+
+        body.theme-peach-dream {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #ffe5b4;
+            --calendar-weekend-bg: #fff8ed;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #8b4513;
+            --calendar-day-number-color: #d2691e;
+        }
+        body.theme-peach-dream #monthly-main-title { color: #d2691e; }
+
+        body.theme-lemon-zest {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #fff8dc;
+            --calendar-weekend-bg: #fffce8;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #b8860b;
+            --calendar-day-number-color: #555;
+        }
+        body.theme-lemon-zest #monthly-main-title { color: #b8860b; }
+
+        body.theme-aqua-mist {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #d1fafa;
+            --calendar-weekend-bg: #ebffff;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #008b8b;
+            --calendar-day-number-color: #40e0d0;
+        }
+         body.theme-aqua-mist #monthly-main-title { color: #008b8b; }
+
+        body.theme-coral-blush {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #fa8072;
+            --calendar-weekend-bg: #fff5f5;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #a52a2a;
+            --calendar-day-number-color: #e9967a;
+        }
+        body.theme-coral-blush #monthly-main-title { color: #dc143c; }
+
+        body.theme-spring-meadow {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #dceddc;
+            --calendar-weekend-bg: #f8fffb;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #228b22;
+            --calendar-day-number-color: #6b8e23;
+        }
+        body.theme-spring-meadow #monthly-main-title { color: #228b22; }
+
+        body.theme-sandstone {
+            --calendar-bg: #ffffff;
+            --calendar-border-color: #000000;
+            --calendar-header-bg: #f5deb3;
+            --calendar-weekend-bg: #fef9ef;
+            --calendar-empty-cell-bg: #ffffff;
+            --calendar-header-text: #8b4513;
+            --calendar-day-number-color: #a0522d;
+        }
+        body.theme-sandstone #monthly-main-title { color: #8b4513; }
+
+        body[class^="theme-pastel-"], body.theme-serene-sky, body.theme-peach-dream, body.theme-lemon-zest, body.theme-aqua-mist, body.theme-coral-blush, body.theme-spring-meadow, body.theme-sandstone {
+             --calendar-text-color: #212529;
+        }
+
+
+        body {
+            background-color: #f8f9fa;
+            font-family: var(--calendar-font-family);
+            color: var(--calendar-text-color);
+            padding-top: 56px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .view-wrapper {
+            display: none;
+        }
+        .view-wrapper.active {
+            display: block;
+        }
+        .container-fluid {
+             max-width: 1140px;
+        }
+
+        /* --- Annual View Specific Styles --- */
+         #annual-view-wrapper #annual-main-title {
+             text-align: center; margin-bottom: 0.25rem;
+         }
+         #annual-view-wrapper #annual-main-title[contenteditable="true"] {
+             cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent;
+             transition: border-color 0.2s ease;
+         }
+         #annual-view-wrapper #annual-main-title[contenteditable="true"]:hover,
+         #annual-view-wrapper #annual-main-title[contenteditable="true"]:focus {
+             border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03);
+         }
+         #annual-view-wrapper .editable-hint {
+            font-size: 0.8rem; text-align: center; color: #6c757d;
+            margin-top: -0.2rem; margin-bottom: 0.5rem; min-height: 1em;
+         }
+         #annual-view-wrapper #calendar-year-range-display {
+            font-size: 1.8rem;
+            font-weight: bold; text-align: center; margin-bottom: 0.1rem;
+         }
+         #annual-view-wrapper #calendar-view-subtitle {
+             font-size: 1rem; text-align: center; color: #6c757d;
+             margin-top: -0.1rem; margin-bottom: 1rem; min-height: 1.5em;
+         }
+         #annual-view-wrapper .month-container {
+             margin-bottom: 1.5rem; padding: 0 10px; display: none;
+         }
+         #annual-view-wrapper .month-container.visible { display: block; }
+         #annual-view-wrapper .month-name {
+             font-size: 1rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem;
+         }
+          #annual-view-wrapper .month-name .year-suffix {
+              font-size: 0.75rem; font-weight: normal; color: #888; margin-left: 4px;
+          }
+         #annual-view-wrapper .calendar-table {
+             width: 100%; table-layout: fixed; border-collapse: collapse;
+             font-size: 0.75rem; text-align: center;
+         }
+         #annual-view-wrapper .calendar-table th { font-weight: bold; padding: 0.15rem 0; color: #555; }
+         #annual-view-wrapper .calendar-table td { padding: 0.1rem 0; border: none; line-height: 1.3; }
+         #annual-view-wrapper .calendar-table .empty-day { visibility: hidden; }
+         #annual-view-wrapper .controls-container {
+             margin-bottom: 1.5rem; padding: 0.5rem 0; text-align: center;
+             border-bottom: 1px solid #eee; background-color: #fff;
+             border-radius: 0.25rem;
+         }
+         #annual-view-wrapper .controls-container label { margin-right: 0.5rem; font-size: 0.9rem; }
+         #annual-view-wrapper .controls-container input[type="number"] {
+             width: 80px; padding: 0.2rem 0.4rem; font-size: 0.9rem;
+             margin-right: 0.5rem; vertical-align: middle;
+         }
+         #annual-view-wrapper .controls-container .btn {
+             padding: 0.2rem 0.8rem; font-size: 0.9rem;
+             vertical-align: middle; margin-left: 10px;
+         }
+         #annual-view-wrapper .controls-container .form-check-label { font-size: 0.9rem; vertical-align: middle; }
+         #annual-view-wrapper .controls-container .form-check-input { vertical-align: middle; }
+         #annual-view-wrapper .controls-container .form-check { margin-left: 0.5rem; display: inline-block; }
+
+        /* --- Monthly View Specific Styles --- */
+        #monthly-view-wrapper .calendar-section-wrapper {
+             background-color: var(--calendar-bg); color: var(--calendar-text-color);
+             border: 1px solid var(--calendar-border-color); padding: 1rem;
+             border-radius: 0.25rem; margin-top: 1rem;
+             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        #monthly-view-wrapper #monthly-main-title {
+            text-align: center;
+            /* Color is set by theme-specific rules */
+            transition: color 0.3s ease;
+        }
+        #monthly-view-wrapper #monthly-main-title[contenteditable="true"] {
+            cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+            display: inline-block;
+        }
+        #monthly-view-wrapper #monthly-main-title[contenteditable="true"]:hover,
+        #monthly-view-wrapper #monthly-main-title[contenteditable="true"]:focus {
+            border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03);
+        }
+         #monthly-view-wrapper .editable-hint {
+             font-size: 0.8rem; text-align: center; color: #6c757d;
+             margin-top: 0; margin-bottom: 1rem; min-height: 1em; display: block;
+         }
+        #monthly-view-wrapper .calendar-table {
+            width: 100%; border-collapse: collapse;
+            background-color: var(--calendar-bg); color: var(--calendar-text-color);
+            transition: background-color 0.3s ease;
+        }
+        #monthly-view-wrapper .calendar-table th {
+            text-align: center; font-weight: bold;
+            background-color: var(--calendar-header-bg); color: var(--calendar-header-text);
+            padding: 0.5rem; width: 14.28%;
+            border: var(--calendar-border-width) solid var(--calendar-border-color);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        #monthly-view-wrapper .calendar-table td {
+            height: 100px; vertical-align: top; padding: 0.3rem; position: relative;
+            border: var(--calendar-border-width) solid var(--calendar-border-color);
+            font-family: var(--calendar-font-family);
+            color: var(--calendar-text-color); /* Ensure day content uses main text color */
+            background-color: var(--calendar-bg); /* Default cell background */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        #monthly-view-wrapper .calendar-table td .day-number {
+            font-size: var(--calendar-day-number-size); font-weight: bold;
+            color: var(--calendar-day-number-color);
+            position: absolute; top: 2px; right: 4px;
+            transition: color 0.3s ease;
+        }
+        #monthly-view-wrapper .calendar-table td.empty-cell { background-color: var(--calendar-empty-cell-bg); }
+        #monthly-view-wrapper .calendar-table td.weekend-cell { background-color: var(--calendar-weekend-bg); }
+        #monthly-view-wrapper #settings-button { font-size: 1.5rem; }
+         #monthly-view-wrapper .controls-section {
+            background-color: #fff;
+         }
+
+        /* --- Print Styles --- */
+ @media print {
+     @page {
+        size: landscape; /* Mantenemos landscape para la mensual */
+        margin: 8mm;
+     }
+
+    .navbar,
+    .d-print-none,
+    #settings-button, /* Añadido por si acaso */
+    .controls-section, /* Añadido por si acaso */
+    .modal, .modal-backdrop,
+    .editable-hint { display: none !important; }
+
+    body {
+        padding-top: 0 !important;
+        background-color: #fff !important; /* Mantenemos fondo blanco base para el papel */
+        /* Eliminamos color: #000 !important; para usar la variable del tema */
+        font-size: 10pt;
+        /* IMPORTANTE: Usar la variable de fuente seleccionada */
+        font-family: var(--calendar-font-family, sans-serif);
+        -webkit-print-color-adjust: exact !important; /* Permitir impresión de colores */
+        print-color-adjust: exact !important;
+    }
+     .container-fluid { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
+
+    .view-wrapper:not(.active) { display: none !important; }
+
+    /* --- Annual Print (Mantenemos simple para legibilidad) --- */
+    #annual-view-wrapper .controls-container { display: none !important; }
+    #annual-view-wrapper { padding: 0 5mm; }
+    #annual-view-wrapper #annual-main-title[contenteditable="true"],
+    #annual-view-wrapper #annual-main-title {
+        border: none !important; padding: 0 !important; cursor: default;
+        background-color: transparent !important; font-size: 38pt !important;
+        text-align: center; margin-bottom: 2mm;
+        color: #000 !important; /* Mantenemos negro para el título principal por legibilidad */
+        display: block !important;
+    }
+     #annual-view-wrapper #calendar-year-range-display { font-size: 24pt; margin-bottom: 0.1cm; color: #000 !important; } /* Mantenemos negro */
+     #annual-view-wrapper #calendar-view-subtitle { font-size: 10pt; margin-bottom: 0.5cm; color: #333 !important; } /* Mantenemos gris oscuro */
+     #annual-view-wrapper #annual-calendar-container.row {
+         display: flex !important; flex-wrap: wrap !important;
+         align-items: flex-start;
+     }
+     #annual-view-wrapper .month-container.visible {
+          display: block !important; flex: 0 0 19.5%; max-width: 19.5%;
+          page-break-inside: avoid !important; margin-bottom: 0.8cm;
+          margin-right: 0.25%; margin-left: 0.25%; border: 1px solid #ccc; /* Borde simple para la caja */
+          padding: 4px; box-sizing: border-box;
+     }
+     #annual-view-wrapper .month-name { font-size: 9pt; color: #000 !important;} /* Texto negro simple */
+     #annual-view-wrapper .month-name .year-suffix { color: #333 !important; }
+     #annual-view-wrapper .calendar-table { font-size: 6.5pt; color: #000 !important; } /* Texto negro simple */
+     #annual-view-wrapper .calendar-table th { color: #000 !important; padding: 0.2px 0; font-weight: bold; } /* Texto negro simple */
+     #annual-view-wrapper .calendar-table td { color: #000 !important; padding: 0.2px 0; } /* Texto negro simple */
+     #annual-view-wrapper .calendar-table .empty-day { visibility: hidden; }
+
+     /* --- Monthly Print (Aplicando Estilos Visuales) --- */
+     #monthly-view-wrapper #monthly-main-title[contenteditable="true"],
+     #monthly-view-wrapper #monthly-main-title {
+          border: none !important; padding: 0 !important; cursor: default;
+          background-color: transparent !important; font-size: 38pt !important;
+          text-align: center; margin-bottom: 2mm;
+          color: #000 !important; /* Mantenemos negro para el título principal por legibilidad */
+          display: block !important;
+      }
+      #monthly-view-wrapper header.mb-3 { margin-bottom: 0 !important; }
+      #monthly-view-wrapper #calendar-output { margin-top: 0 !important; }
+      #monthly-view-wrapper .calendar-section-wrapper {
+          border: none !important; /* Quitamos el borde del wrapper, la tabla ya tiene */
+          padding: 0;
+          background-color: transparent !important; /* El fondo lo da la tabla/celdas */
+          color: var(--calendar-text-color); /* Usar color de texto del tema */
+      }
+     #monthly-view-wrapper #calendar-title {
+          display: block !important; text-align: center; font-size: 28pt;
+          font-weight: normal; margin-bottom: 5mm;
+          color: var(--calendar-header-text, #000); /* Usar color de cabecera del tema, fallback a negro */
+     }
+
+     /* --- Estilos de Tabla Mensual para Impresión con Variables --- */
+     #monthly-view-wrapper .calendar-table {
+         border-collapse: collapse; /* Asegurar bordes limpios */
+         width: 100%;
+         color: var(--calendar-text-color); /* Color de texto general de la tabla */
+     }
+     #monthly-view-wrapper .calendar-table th,
+     #monthly-view-wrapper .calendar-table td {
+         /* Usar variables para el borde */
+         border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #000) !important;
+         -webkit-print-color-adjust: exact !important; /* Forzar colores */
+         print-color-adjust: exact !important;
+     }
+
+     #monthly-view-wrapper .calendar-table th {
+         /* Usar variables para la cabecera */
+         background-color: var(--calendar-header-bg) !important;
+         color: var(--calendar-header-text) !important;
+         font-weight: bold;
+         text-align: center;
+         padding: 0.3rem;
+     }
+
+     #monthly-view-wrapper .calendar-table td {
+         height: 2.6cm; /* Altura fija para impresión */
+         font-size: 9pt;
+         vertical-align: top;
+         padding: 0.3rem;
+         position: relative;
+         /* Usar variable para el fondo normal de celda */
+         background-color: var(--calendar-bg) !important;
+         /* El color del texto dentro de la celda ya viene de .calendar-table o .body */
+     }
+
+     #monthly-view-wrapper .calendar-table td .day-number {
+         /* Usar variable para el número del día */
+         color: var(--calendar-day-number-color) !important;
+         font-size: 0.7em;
+         position: absolute; top: 2px; right: 4px; /* Mantenemos posición */
+     }
+
+     #monthly-view-wrapper .calendar-table td.weekend-cell {
+         /* Usar variable para el fondo de fin de semana */
+         background-color: var(--calendar-weekend-bg) !important;
+     }
+
+     #monthly-view-wrapper .calendar-table td.empty-cell {
+         /* Usar variable para celdas vacías */
+         background-color: var(--calendar-empty-cell-bg) !important;
+         /* Aseguramos que el borde sea visible y use el color del tema */
+         border-color: var(--calendar-border-color, #ccc) !important;
+     }
+
+     /* Eliminar regla general que forzaba negro en todos los H/P */
+     /* #monthly-view-wrapper h1, #monthly-view-wrapper h2, #monthly-view-wrapper h3, #monthly-view-wrapper p { color: #000 !important; } */
+}
+    </style>
+</head>
+<body class="theme-contrast">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Calendarios</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="annual">Vista Anual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="monthly">Vista Mensual</a>
+                    </li>
+                </ul>
+                <button id="general-print-btn" class="btn btn-outline-light btn-sm d-none d-sm-inline-block">
+                    <i class="bi bi-printer-fill"></i> Imprimir Vista Actual
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+
+        <!-- ================== ANNUAL VIEW ================== -->
+        <div id="annual-view-wrapper" class="view-wrapper">
+            <div class="controls-container d-print-none">
+                <label for="annual-year-select">Año (inicio):</label>
+                <input type="number" id="annual-year-select" class="form-control form-control-sm d-inline-block w-auto" value="2024">
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="viewSelectionAnnual" id="viewSchoolYear" value="school" checked>
+                    <label class="form-check-label" for="viewSchoolYear">
+                        Año Escolar (Sep-Jun)
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="viewSelectionAnnual" id="viewFullYear" value="full">
+                    <label class="form-check-label" for="viewFullYear">
+                        Año Completo
+                    </label>
+                </div>
+            </div>
+
+            <h1 id="annual-main-title" contenteditable="true" class="d-print-inline">Calendario Anual</h1>
+            <p class="editable-hint d-print-none">Haz clic en el título para editarlo.</p>
+            <h2 id="calendar-year-range-display"></h2>
+            <p id="calendar-view-subtitle"></p>
+
+            <div id="annual-calendar-container" class="row">
+                <!-- Calendarios mensuales pequeños se generan aquí -->
+            </div>
+        </div>
+
+        <!-- ================== MONTHLY VIEW ================== -->
+        <div id="monthly-view-wrapper" class="view-wrapper">
+            <header class="d-flex justify-content-between align-items-center mb-3">
+                 <div class="text-center flex-grow-1">
+                     <h1 id="monthly-main-title" contenteditable="true" class="d-print-inline">Calendario Mensual Personalizable</h1>
+                     <p class="editable-hint d-print-none">Haz clic en el título para editarlo.</p>
+                 </div>
+                 <button id="settings-button" class="btn btn-light d-print-none ms-3" type="button" data-bs-toggle="modal" data-bs-target="#settingsModal" aria-label="Abrir configuración">
+                     <i class="bi bi-gear-fill fs-5"></i>
+                 </button>
+            </header>
+
+            <section class="controls-section card p-3 mb-4 d-print-none">
+                 <div class="row g-3 align-items-end">
+                    <div class="col-md-6">
+                        <label for="monthly-month-select" class="form-label">Mes:</label>
+                        <select id="monthly-month-select" class="form-select">
+                             <option value="0">Enero</option><option value="1">Febrero</option><option value="2">Marzo</option><option value="3">Abril</option><option value="4">Mayo</option><option value="5">Junio</option><option value="6">Julio</option><option value="7">Agosto</option><option value="8">Septiembre</option><option value="9">Octubre</option><option value="10">Noviembre</option><option value="11">Diciembre</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="monthly-year-select" class="form-label">Año:</label>
+                        <select id="monthly-year-select" class="form-select"></select>
+                    </div>
+                 </div>
+            </section>
+
+            <div class="modal fade d-print-none" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Configuración y Estilos (Mensual)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                         <div class="col-md-6">
+                             <h5>Funcionalidad</h5>
+                             <div class="mb-3">
+                                <label class="form-label">Primer día de la semana:</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="startDayOfWeek" id="startDayMonday" value="1">
+                                  <label class="form-check-label" for="startDayMonday">Lunes</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="startDayOfWeek" id="startDaySunday" value="0">
+                                  <label class="form-check-label" for="startDaySunday">Domingo</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="highlightWeekends">
+                                  <label class="form-check-label" for="highlightWeekends">Resaltar fines de semana</label>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <h5>Apariencia</h5>
+                             <div class="mb-3">
+                                 <label for="theme-select" class="form-label">Tema:</label>
+                                 <select id="theme-select" class="form-select">
+                                     <option value="contrast">Alto Contraste (Predeterminado)</option>
+                                     <option value="default">Claro</option>
+                                     <option value="pastel-rose">Pastel Rosa Suave</option>
+                                     <option value="pastel-mint">Menta Fresca</option>
+                                     <option value="serene-sky">Cielo Sereno</option>
+                                     <option value="soft-lavender">Lavanda Suave</option>
+                                     <option value="peach-dream">Sueño de Melocotón</option>
+                                     <option value="lemon-zest">Ralladura de Limón</option>
+                                     <option value="aqua-mist">Niebla Aqua</option>
+                                     <option value="coral-blush">Rubor Coral</option>
+                                     <option value="spring-meadow">Prado Primaveral</option>
+                                     <option value="sandstone">Arenisca</option>
+                                 </select>
+                             </div>
+                             <div class="mb-3">
+                                <label for="line-thickness-slider" class="form-label">Grosor de Línea: <span id="line-thickness-value">1.5</span>px</label>
+                                <input type="range" class="form-range" id="line-thickness-slider" min="0.5" max="3" step="0.1" value="1.5">
+                            </div>
+                            <div class="mb-3">
+                                <label for="font-family-select" class="form-label">Fuente:</label>
+                                <select id="font-family-select" class="form-select">
+                                    <option value="'Lato', sans-serif">Lato (Predeterminada)</option>
+                                    <option value="'Roboto', sans-serif">Roboto</option>
+                                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                                    <option value="serif">Serif (Navegador)</option>
+                                    <option value="monospace">Monospace (Navegador)</option>
+                                </select>
+                            </div>
+                         </div>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="save-settings-button">Guardar y Aplicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <section id="calendar-output" class="calendar-section-wrapper calendar-section">
+                <h2 id="calendar-title" class="text-center mb-3 d-print-none"></h2>
+                <div class="table-responsive">
+                     <table class="table table-bordered calendar-table">
+                        <thead><tr></tr></thead>
+                        <tbody id="calendar-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const navLinks = document.querySelectorAll('.navbar .nav-link[data-view]');
+            const viewWrappers = document.querySelectorAll('.view-wrapper');
+            const generalPrintBtn = document.getElementById('general-print-btn');
+            const pageTitleElement = document.getElementById('page-title');
+
+            let currentView = 'annual';
+
+            function setActiveView(viewName) {
+                currentView = viewName;
+                viewWrappers.forEach(wrapper => {
+                    wrapper.classList.toggle('active', wrapper.id === `${viewName}-view-wrapper`);
+                });
+                navLinks.forEach(link => {
+                    const isActive = link.dataset.view === viewName;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) link.setAttribute('aria-current', 'page');
+                    else link.removeAttribute('aria-current');
+                });
+
+                 let activeMainTitleElement;
+                 if (viewName === 'annual') {
+                    activeMainTitleElement = document.getElementById('annual-main-title');
+                    pageTitleElement.textContent = activeMainTitleElement ? (activeMainTitleElement.textContent || 'Calendario Anual') : 'Calendario Anual';
+                 } else if (viewName === 'monthly') {
+                    activeMainTitleElement = document.getElementById('monthly-main-title');
+                     // Use title from settings which reflects the current state
+                     pageTitleElement.textContent = monthlyViewLogic?.getCurrentSettings()?.mainTitle || 'Calendario Mensual';
+                 } else {
+                     pageTitleElement.textContent = 'Calendarios Escolares y Mensuales';
+                 }
+
+
+                 console.log(`Vista cambiada a: ${viewName}`);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const view = e.target.dataset.view;
+                    if (view) setActiveView(view);
+                });
+            });
+
+             if (generalPrintBtn) {
+                generalPrintBtn.addEventListener('click', () => {
+                    console.log(`Imprimiendo vista actual: ${currentView}`);
+                    window.print();
+                });
+            }
+
+            // --- Lógica de la Vista Anual ---
+            const annualViewLogic = (() => {
+                const wrapper = document.getElementById('annual-view-wrapper');
+                if (!wrapper) return { init: () => console.warn("Annual view wrapper not found") };
+
+                const calendarContainer = wrapper.querySelector('#annual-calendar-container');
+                const mainTitleElement = wrapper.querySelector('#annual-main-title');
+                const yearRangeDisplayElement = wrapper.querySelector('#calendar-year-range-display');
+                const viewSubtitleElement = wrapper.querySelector('#calendar-view-subtitle');
+                const yearSelect = wrapper.querySelector('#annual-year-select');
+                const viewRadios = wrapper.querySelectorAll('input[name="viewSelectionAnnual"]');
+                const schoolYearRadio = wrapper.querySelector('#viewSchoolYear');
+
+                const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+                const dayHeaders = ['LU', 'MA', 'MI', 'JU', 'VI', 'SA', 'DO'];
+
+                let currentAnnualTitle = "Calendario Anual";
+
+                function createMonthHTML(year, monthIndex) {
+                    const date = new Date(year, monthIndex, 1);
+                    const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+                    const startDayOfWeek = (date.getDay() + 6) % 7;
+
+                    let tableHTML = `<div class="col-md-4 month-container" data-month="${monthIndex}" data-year="${year}"><h3 class="month-name">${monthNames[monthIndex]}</h3><table class="calendar-table"><thead><tr>`;
+
+                    dayHeaders.forEach(header => { tableHTML += `<th>${header}</th>`; });
+                    tableHTML += `</tr></thead><tbody><tr>`;
+
+                    let dayCounter = 1; let cellCounter = 0;
+                    for (let i = 0; i < startDayOfWeek; i++) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; }
+                    while (dayCounter <= daysInMonth) {
+                        if (cellCounter > 0 && cellCounter % 7 === 0) { tableHTML += `</tr><tr>`; }
+                        tableHTML += `<td>${dayCounter}</td>`; dayCounter++; cellCounter++;
+                    }
+                    while (cellCounter % 7 !== 0) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; }
+                    tableHTML += `</tr></tbody></table></div>`;
+                    return tableHTML;
+                }
+
+                function updateDynamicTitles(baseYear, view) {
+                     if (!yearRangeDisplayElement || !viewSubtitleElement) return;
+                     if (view === 'school') {
+                         yearRangeDisplayElement.textContent = `${baseYear} - ${baseYear + 1}`;
+                         viewSubtitleElement.textContent = 'Año Escolar';
+                     } else {
+                         yearRangeDisplayElement.textContent = baseYear;
+                         viewSubtitleElement.textContent = 'Año Completo';
+                     }
+                }
+
+                function updateVisibleMonthsAndTitle() {
+                    const selectedView = wrapper.querySelector('input[name="viewSelectionAnnual"]:checked')?.value || 'school';
+                    const baseYear = parseInt(yearSelect.value, 10);
+                    if (isNaN(baseYear)) { console.error("Año inválido:", yearSelect.value); return; }
+                    const nextYear = baseYear + 1;
+                    const allMonths = calendarContainer.querySelectorAll('.month-container');
+
+                    updateDynamicTitles(baseYear, selectedView);
+
+                    const schoolYearMonthsBase = [8, 9, 10, 11];
+                    const schoolYearMonthsNext = [0, 1, 2, 3, 4, 5];
+
+                    let hasVisibleMonths = false;
+
+                    allMonths.forEach(monthDiv => {
+                        const monthIndex = parseInt(monthDiv.dataset.month, 10);
+                        const monthYear = parseInt(monthDiv.dataset.year, 10);
+                        let isVisible = false;
+
+                        if (selectedView === 'full') {
+                            isVisible = (monthYear === baseYear);
+                        } else if (selectedView === 'school') {
+                            isVisible =
+                                (monthYear === baseYear && schoolYearMonthsBase.includes(monthIndex)) ||
+                                (monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex));
+                        }
+
+                        monthDiv.classList.toggle('visible', isVisible);
+                        if(isVisible) hasVisibleMonths = true;
+
+                        const monthNameElement = monthDiv.querySelector('.month-name');
+                        if (monthNameElement) {
+                            const existingSuffix = monthNameElement.querySelector('.year-suffix');
+                            if(existingSuffix) existingSuffix.remove();
+                            if (isVisible && selectedView === 'school' && monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex)) {
+                                monthNameElement.insertAdjacentHTML('beforeend', `<span class="year-suffix">(${nextYear})</span>`);
+                            }
+                        }
+                    });
+
+                     calendarContainer.style.display = hasVisibleMonths ? 'flex' : 'none';
+                }
+
+
+                function generateRequiredCalendars() {
+                    const baseYear = parseInt(yearSelect.value, 10);
+                    if (isNaN(baseYear) || baseYear < 1000 || baseYear > 3000) {
+                        alert("Por favor, introduce un año válido (ej. 2024).");
+                        yearSelect.value = new Date().getFullYear();
+                        generateRequiredCalendars(); // Recalculate with valid year
+                        return;
+                    }
+                    const nextYear = baseYear + 1;
+
+                    calendarContainer.innerHTML = '';
+
+                    let fullCalendarHTML = '';
+                    for (let i = 0; i < 12; i++) { fullCalendarHTML += createMonthHTML(baseYear, i); }
+                    for (let i = 0; i < 12; i++) { fullCalendarHTML += createMonthHTML(nextYear, i); }
+
+                    calendarContainer.innerHTML = fullCalendarHTML;
+                    updateVisibleMonthsAndTitle();
+                }
+
+                function handleTitleEdit(event) {
+                     const newTitle = event.target.textContent.trim();
+                     currentAnnualTitle = newTitle || "Calendario Anual";
+                     event.target.textContent = currentAnnualTitle;
+                      if(currentView === 'annual') {
+                          pageTitleElement.textContent = currentAnnualTitle;
+                      }
+                     console.log("Annual title updated (in memory):", currentAnnualTitle);
+                }
+
+                function init() {
+                     console.log("Inicializando Vista Anual");
+                     const today = new Date();
+                     const currentYear = today.getFullYear();
+                     const currentMonth = today.getMonth();
+                     let schoolYearStartYear = (currentMonth >= 8) ? currentYear : currentYear - 1;
+
+                     yearSelect.value = schoolYearStartYear;
+                     if (schoolYearRadio) schoolYearRadio.checked = true;
+                     else console.error("Radio #viewSchoolYear no encontrado.");
+
+                     if (mainTitleElement) mainTitleElement.textContent = currentAnnualTitle;
+
+                     yearSelect.addEventListener('change', generateRequiredCalendars);
+                     viewRadios.forEach(radio => { radio.addEventListener('change', updateVisibleMonthsAndTitle); });
+
+                     if (mainTitleElement) {
+                         mainTitleElement.addEventListener('blur', handleTitleEdit);
+                         mainTitleElement.addEventListener('keypress', (e) => {
+                             if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
+                         });
+                     }
+
+                     generateRequiredCalendars();
+                }
+
+                return { init };
+
+            })();
+
+            // --- Lógica de la Vista Mensual ---
+             const monthlyViewLogic = (() => {
+                const wrapper = document.getElementById('monthly-view-wrapper');
+                 if (!wrapper) return { init: () => console.warn("Monthly view wrapper not found"), getCurrentSettings: () => null };
+
+                const mainTitleElement = wrapper.querySelector('#monthly-main-title');
+                const monthSelect = wrapper.querySelector('#monthly-month-select');
+                const yearSelect = wrapper.querySelector('#monthly-year-select');
+                const calendarBody = wrapper.querySelector('#calendar-body');
+                const calendarTitle = wrapper.querySelector('#calendar-title');
+                const calendarTableHead = wrapper.querySelector('.calendar-table thead tr');
+                const settingsModalElement = document.getElementById('settingsModal');
+                const settingsModal = settingsModalElement ? new bootstrap.Modal(settingsModalElement) : null;
+                const saveSettingsButton = document.getElementById('save-settings-button');
+
+                const startDayMondayRadio = document.getElementById('startDayMonday');
+                const startDaySundayRadio = document.getElementById('startDaySunday');
+                const highlightWeekendsSwitch = document.getElementById('highlightWeekends');
+                const themeSelect = document.getElementById('theme-select');
+                const lineThicknessSlider = document.getElementById('line-thickness-slider');
+                const lineThicknessValueSpan = document.getElementById('line-thickness-value');
+                const fontFamilySelect = document.getElementById('font-family-select');
+
+                const bodyElement = document.body;
+                const rootElement = document.documentElement;
+
+                const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                const dayNamesShort = {
+                     mondayFirst: ["L", "M", "X", "J", "V", "S", "D"],
+                     sundayFirst: ["D", "L", "M", "X", "J", "V", "S"]
+                }
+
+                const defaultSettings = {
+                    mainTitle: "Calendario Mensual Personalizable",
+                    startDayOfWeek: 1,
+                    highlightWeekends: true,
+                    theme: 'contrast',
+                    lineWidth: 1.5,
+                    fontFamily: "'Lato', sans-serif"
+                };
+
+                let currentSettings = { ...defaultSettings };
+
+                 function applyTheme(themeValue) {
+                     const allThemeValues = [
+                         'contrast', 'default', 'pastel-rose', 'pastel-mint', 'serene-sky',
+                         'soft-lavender', 'peach-dream', 'lemon-zest', 'aqua-mist',
+                         'coral-blush', 'spring-meadow', 'sandstone'
+                     ];
+                     const allThemeClasses = allThemeValues.map(val => `theme-${val}`);
+
+                     bodyElement.classList.remove(...allThemeClasses);
+
+                     const validThemeValue = allThemeValues.includes(themeValue) ? themeValue : defaultSettings.theme;
+                     const validThemeClass = `theme-${validThemeValue}`;
+
+                     bodyElement.classList.add(validThemeClass);
+                     currentSettings.theme = validThemeValue;
+                     console.log(`Applied theme: ${validThemeClass}`);
+                 }
+
+                function applyLineThickness(width) {
+                    const widthValue = parseFloat(width).toFixed(1);
+                    rootElement.style.setProperty('--calendar-border-width', `${widthValue}px`);
+                    if(lineThicknessValueSpan) lineThicknessValueSpan.textContent = widthValue;
+                    currentSettings.lineWidth = widthValue;
+                }
+
+                function applyFontFamily(font) {
+                    const safeFont = font || defaultSettings.fontFamily;
+                    rootElement.style.setProperty('--calendar-font-family', safeFont);
+                    currentSettings.fontFamily = safeFont;
+                }
+
+                 function applyMainTitle(title) {
+                    const safeTitle = title ? title.trim() : defaultSettings.mainTitle;
+                    const finalTitle = safeTitle || defaultSettings.mainTitle;
+                    if (mainTitleElement) mainTitleElement.textContent = finalTitle;
+                    if (currentView === 'monthly') {
+                        pageTitleElement.textContent = finalTitle;
+                    }
+                    currentSettings.mainTitle = finalTitle;
+                 }
+
+                function loadSettings() {
+                    try {
+                        const storedSettings = localStorage.getItem('calendarSettingsV3');
+                        if (storedSettings) {
+                             currentSettings = { ...defaultSettings, ...JSON.parse(storedSettings) };
+                        } else {
+                             currentSettings = { ...defaultSettings };
+                        }
+                    } catch (error) {
+                        console.error("Error al cargar la configuración:", error);
+                        currentSettings = { ...defaultSettings };
+                    }
+
+                    applyMainTitle(currentSettings.mainTitle);
+
+                    if(startDayMondayRadio) startDayMondayRadio.checked = currentSettings.startDayOfWeek === 1;
+                    if(startDaySundayRadio) startDaySundayRadio.checked = currentSettings.startDayOfWeek === 0;
+                    if(highlightWeekendsSwitch) highlightWeekendsSwitch.checked = currentSettings.highlightWeekends;
+                    if(themeSelect) themeSelect.value = currentSettings.theme;
+                    if(lineThicknessSlider) lineThicknessSlider.value = currentSettings.lineWidth;
+                    if(fontFamilySelect) fontFamilySelect.value = currentSettings.fontFamily;
+
+                    applyTheme(currentSettings.theme);
+                    applyLineThickness(currentSettings.lineWidth);
+                    applyFontFamily(currentSettings.fontFamily);
+                }
+
+                function saveSettingsToLocalStorage() {
+                    try {
+                        currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek);
+                        currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends;
+
+                        localStorage.setItem('calendarSettingsV3', JSON.stringify(currentSettings));
+                        console.log("Configuración mensual guardada:", currentSettings);
+                    } catch (error) {
+                        console.error("Error al guardar la configuración mensual:", error);
+                    }
+                }
+
+                function handleSaveButtonClick() {
+                     currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek);
+                     currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends;
+
+                     saveSettingsToLocalStorage();
+                     if(settingsModal) settingsModal.hide();
+
+                     generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value));
+                }
+
+
+                function handleTitleEdit(event) {
+                     applyMainTitle(event.target.textContent);
+                     saveSettingsToLocalStorage();
+                 }
+
+
+                function populateYears() {
+                    const currentYear = new Date().getFullYear();
+                    const startYear = currentYear - 10; const endYear = currentYear + 10;
+                    yearSelect.innerHTML = '';
+                    for (let year = startYear; year <= endYear; year++) {
+                        const option = document.createElement('option');
+                        option.value = year; option.textContent = year;
+                        yearSelect.appendChild(option);
+                    }
+                }
+
+                function generateCalendar(year, month) {
+                    if (isNaN(year) || isNaN(month) || month < 0 || month > 11) {
+                        console.error(`Datos inválidos para generar calendario mensual: Año=${year}, Mes=${month}`);
+                        calendarTitle.textContent = "Error";
+                        calendarBody.innerHTML = '<tr><td colspan="7">Selecciona mes/año válidos.</td></tr>';
+                        return;
+                    }
+
+                    if (!calendarBody || !calendarTableHead || !calendarTitle) {
+                        console.error("Elementos del calendario mensual no encontrados.");
+                        return;
+                    }
+
+                    calendarBody.innerHTML = ''; calendarTableHead.innerHTML = '';
+                    const { startDayOfWeek: startDaySetting, highlightWeekends } = currentSettings;
+                    const currentDayNames = startDaySetting === 1 ? dayNamesShort.mondayFirst : dayNamesShort.sundayFirst;
+
+                    currentDayNames.forEach(day => {
+                        const th = document.createElement('th'); th.scope = 'col'; th.textContent = day;
+                        calendarTableHead.appendChild(th);
+                    });
+
+                    const firstDayOfMonth = new Date(year, month, 1);
+                    const lastDayOfMonth = new Date(year, month + 1, 0);
+                    const daysInMonth = lastDayOfMonth.getDate();
+                    let firstDayIndex = startDaySetting === 1 ? (firstDayOfMonth.getDay() + 6) % 7 : firstDayOfMonth.getDay();
+
+                    calendarTitle.textContent = `${monthNames[month]} ${year}`;
+
+                    let date = 1; let currentWeekRow = document.createElement('tr');
+                    for (let i = 0; i < firstDayIndex; i++) {
+                        const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell);
+                    }
+
+                    while (date <= daysInMonth) {
+                        if (currentWeekRow.children.length === 7) {
+                            calendarBody.appendChild(currentWeekRow); currentWeekRow = document.createElement('tr');
+                        }
+                        const cell = document.createElement('td');
+                        const dayNumberSpan = document.createElement('span'); dayNumberSpan.classList.add('day-number'); dayNumberSpan.textContent = date;
+                        cell.appendChild(dayNumberSpan);
+
+                        const currentDate = new Date(year, month, date);
+                        const dayOfWeek = currentDate.getDay();
+                        if (highlightWeekends && (dayOfWeek === 0 || dayOfWeek === 6)) {
+                            cell.classList.add('weekend-cell');
+                        }
+                        currentWeekRow.appendChild(cell); date++;
+                    }
+                    while (currentWeekRow.children.length > 0 && currentWeekRow.children.length < 7) {
+                        const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell);
+                    }
+                     if (currentWeekRow.children.length > 0) calendarBody.appendChild(currentWeekRow);
+                }
+
+                function init() {
+                     console.log("Inicializando Vista Mensual");
+                     loadSettings();
+                     populateYears();
+
+                     const today = new Date();
+                     const currentMonth = today.getMonth();
+                     const currentYear = today.getFullYear();
+
+                     monthSelect.value = currentMonth;
+                     yearSelect.value = currentYear;
+
+                     generateCalendar(currentYear, currentMonth);
+
+                     monthSelect.addEventListener('change', () => generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)));
+                     yearSelect.addEventListener('change', () => generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)));
+
+                      if (mainTitleElement) {
+                         mainTitleElement.addEventListener('blur', handleTitleEdit);
+                         mainTitleElement.addEventListener('keypress', (e) => {
+                             if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
+                         });
+                      }
+
+                     if(themeSelect) themeSelect.addEventListener('change', (e) => { applyTheme(e.target.value); saveSettingsToLocalStorage(); });
+                     if(lineThicknessSlider) {
+                         lineThicknessSlider.addEventListener('input', (e) => { applyLineThickness(e.target.value); });
+                         lineThicknessSlider.addEventListener('change', saveSettingsToLocalStorage);
+                     }
+                     if(fontFamilySelect) fontFamilySelect.addEventListener('change', (e) => { applyFontFamily(e.target.value); saveSettingsToLocalStorage(); });
+                     if(saveSettingsButton) saveSettingsButton.addEventListener('click', handleSaveButtonClick);
+
+                     if (currentView === 'monthly') {
+                         pageTitleElement.textContent = currentSettings.mainTitle;
+                     }
+                }
+
+                // Expose function to get current settings for page title update
+                function getCurrentSettings() {
+                    return { ...currentSettings };
+                }
+
+
+                return { init, getCurrentSettings };
+
+            })();
+
+            // --- Inicialización General ---
+            if (annualViewLogic) annualViewLogic.init();
+            if (monthlyViewLogic) monthlyViewLogic.init();
+
+            // Set the initial active view defined earlier
+            setActiveView(currentView);
+
+        });
+    </script>
+
+</body>
+</html>
