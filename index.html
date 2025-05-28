@@ -24,130 +24,95 @@
             --calendar-font-family: 'Lato', sans-serif;
             --calendar-font-size-base: 1rem;
             --calendar-day-number-size: 0.8em;
+            --annual-weekend-highlight-color: rgba(255, 0, 0, 0.1);
+            --tool-active-bg: #0d6efd;
+            --tool-active-text: #ffffff;
         }
 
         body.theme-default {
              --calendar-bg: #ffffff;
              --calendar-text-color: #212529;
-             ---calendar-border-color: #000000;
+             --calendar-border-color: #dee2e6;
              --calendar-header-bg: #e9ecef;
              --calendar-header-text: #495057;
              --calendar-day-number-color: #6c757d;
              --calendar-weekend-bg: #f8f9fa;
              --calendar-empty-cell-bg: #ffffff;
              --calendar-border-width: 1px;
+             --annual-weekend-highlight-color: rgba(255, 0, 0, 0.07);
         }
-        body.theme-contrast {} /* Styles applied by default */
+        body.theme-contrast {
+             --calendar-border-color: #000000;
+             --annual-weekend-highlight-color: rgba(220, 20, 60, 0.15);
+        }
 
-        /* --- Temas Pastel Adicionales (Alto Contraste) --- */
         body.theme-pastel-rose {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #ffe4e1;
-            --calendar-weekend-bg: #fff5f8;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #333;
-            --calendar-day-number-color: #555;
-            --calendar-border-width: 1px;
+            --calendar-bg: #ffffff; --calendar-border-color: #8B4561; --calendar-header-bg: #ffe4e1;
+            --calendar-weekend-bg: #fff5f8; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #783f50;
+            --calendar-day-number-color: #c71585; --calendar-border-width: 1px; --annual-weekend-highlight-color: rgba(255, 182, 193, 0.3);
         }
         body.theme-pastel-rose #monthly-main-title { color: #c71585; }
 
         body.theme-pastel-mint {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #d4f0d4;
-            --calendar-weekend-bg: #f5fff8;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #2e8b57;
-            --calendar-day-number-color: #333;
+            --calendar-bg: #ffffff; --calendar-border-color: #2E8B57; --calendar-header-bg: #d4f0d4;
+            --calendar-weekend-bg: #f0fff0; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #2E8B57;
+            --calendar-day-number-color: #3CB371; --annual-weekend-highlight-color: rgba(144, 238, 144, 0.3);
         }
         body.theme-pastel-mint #monthly-main-title { color: #2e8b57; }
 
         body.theme-serene-sky {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #e0f0ff;
-            --calendar-weekend-bg: #f5faff;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #191970;
-            --calendar-day-number-color: #4682b4;
+            --calendar-bg: #ffffff; --calendar-border-color: #191970; --calendar-header-bg: #e0f7ff;
+            --calendar-weekend-bg: #f0f8ff; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #191970;
+            --calendar-day-number-color: #4682b4; --annual-weekend-highlight-color: rgba(173, 216, 230, 0.3);
         }
         body.theme-serene-sky #monthly-main-title { color: #4682b4; }
 
         body.theme-soft-lavender {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #d8d8f0;
-            --calendar-weekend-bg: #f0f0fc;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #483d8b;
-            --calendar-day-number-color: #555;
+            --calendar-bg: #ffffff; --calendar-border-color: #483D8B; --calendar-header-bg: #e6e6fa;
+            --calendar-weekend-bg: #f8f8ff; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #483D8B;
+            --calendar-day-number-color: #6A5ACD; --annual-weekend-highlight-color: rgba(216, 191, 216, 0.3);
         }
         body.theme-soft-lavender #monthly-main-title { color: #483d8b; }
 
         body.theme-peach-dream {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #ffe5b4;
-            --calendar-weekend-bg: #fff8ed;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #8b4513;
-            --calendar-day-number-color: #d2691e;
+            --calendar-bg: #ffffff; --calendar-border-color: #8B4513; --calendar-header-bg: #ffe5b4;
+            --calendar-weekend-bg: #fff8dc; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #8B4513;
+            --calendar-day-number-color: #D2691E; --annual-weekend-highlight-color: rgba(255, 218, 185, 0.3);
         }
         body.theme-peach-dream #monthly-main-title { color: #d2691e; }
 
         body.theme-lemon-zest {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #fff8dc;
-            --calendar-weekend-bg: #fffce8;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #b8860b;
-            --calendar-day-number-color: #555;
+            --calendar-bg: #ffffff; --calendar-border-color: #B8860B; --calendar-header-bg: #fffacd;
+            --calendar-weekend-bg: #fffef0; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #B8860B;
+            --calendar-day-number-color: #FFD700; --annual-weekend-highlight-color: rgba(255, 250, 205, 0.4);
         }
         body.theme-lemon-zest #monthly-main-title { color: #b8860b; }
 
         body.theme-aqua-mist {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #d1fafa;
-            --calendar-weekend-bg: #ebffff;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #008b8b;
-            --calendar-day-number-color: #40e0d0;
+            --calendar-bg: #ffffff; --calendar-border-color: #008B8B; --calendar-header-bg: #e0ffff;
+            --calendar-weekend-bg: #f0ffff; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #008B8B;
+            --calendar-day-number-color: #40E0D0; --annual-weekend-highlight-color: rgba(175, 238, 238, 0.3);
         }
          body.theme-aqua-mist #monthly-main-title { color: #008b8b; }
 
         body.theme-coral-blush {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #fa8072;
-            --calendar-weekend-bg: #fff5f5;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #a52a2a;
-            --calendar-day-number-color: #e9967a;
+            --calendar-bg: #ffffff; --calendar-border-color: #A52A2A; --calendar-header-bg: #ffc0cb;
+            --calendar-weekend-bg: #fff5f5; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #A52A2A;
+            --calendar-day-number-color: #FF6347; --annual-weekend-highlight-color: rgba(255, 127, 80, 0.25);
         }
         body.theme-coral-blush #monthly-main-title { color: #dc143c; }
 
         body.theme-spring-meadow {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #dceddc;
-            --calendar-weekend-bg: #f8fffb;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #228b22;
-            --calendar-day-number-color: #6b8e23;
+            --calendar-bg: #ffffff; --calendar-border-color: #228B22; --calendar-header-bg: #d0f0c0;
+            --calendar-weekend-bg: #f5fff5; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #228B22;
+            --calendar-day-number-color: #6B8E23; --annual-weekend-highlight-color: rgba(152, 251, 152, 0.3);
         }
         body.theme-spring-meadow #monthly-main-title { color: #228b22; }
 
         body.theme-sandstone {
-            --calendar-bg: #ffffff;
-            --calendar-border-color: #000000;
-            --calendar-header-bg: #f5deb3;
-            --calendar-weekend-bg: #fef9ef;
-            --calendar-empty-cell-bg: #ffffff;
-            --calendar-header-text: #8b4513;
-            --calendar-day-number-color: #a0522d;
+            --calendar-bg: #ffffff; --calendar-border-color: #8B4513; --calendar-header-bg: #f5deb3;
+            --calendar-weekend-bg: #fdf5e6; --calendar-empty-cell-bg: #ffffff; --calendar-header-text: #8B4513;
+            --calendar-day-number-color: #A0522D; --annual-weekend-highlight-color: rgba(244, 164, 96, 0.25);
         }
         body.theme-sandstone #monthly-main-title { color: #8b4513; }
 
@@ -155,278 +120,174 @@
              --calendar-text-color: #212529;
         }
 
-
         body {
-            background-color: #f8f9fa;
-            font-family: var(--calendar-font-family);
-            color: var(--calendar-text-color);
-            padding-top: 56px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f8f9fa; font-family: var(--calendar-font-family); color: var(--calendar-text-color);
+            padding-top: 56px; transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .view-wrapper {
+        .view-wrapper { display: none; }
+        .view-wrapper.active { display: block; }
+        .container-fluid { max-width: 1280px; }
+
+        #annual-view-wrapper #annual-main-title { text-align: center; margin-bottom: 0.25rem; }
+        #annual-view-wrapper #annual-main-title[contenteditable="true"] { cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent; transition: border-color 0.2s ease; }
+        #annual-view-wrapper #annual-main-title[contenteditable="true"]:hover,
+        #annual-view-wrapper #annual-main-title[contenteditable="true"]:focus { border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03); }
+        #annual-view-wrapper .editable-hint { font-size: 0.8rem; text-align: center; color: #6c757d; margin-top: -0.2rem; margin-bottom: 0.5rem; min-height: 1em; }
+        #annual-view-wrapper #calendar-year-range-display { font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.1rem; }
+        #annual-view-wrapper #calendar-view-subtitle { font-size: 1rem; text-align: center; color: #6c757d; margin-top: -0.1rem; margin-bottom: 1rem; min-height: 1.5em; }
+        
+        #annual-view-wrapper .month-container {
+            margin-bottom: 2.5rem; 
+            padding: 0; 
             display: none;
         }
-        .view-wrapper.active {
+        #annual-view-wrapper .month-container.visible {
             display: block;
         }
-        .container-fluid {
-             max-width: 1140px;
+        #annual-view-wrapper .month-name { font-size: 0.9rem; font-weight: bold; text-align: center; margin-bottom: 0.3rem; }
+        #annual-view-wrapper .month-name .year-suffix { font-size: 0.7rem; font-weight: normal; color: #888; margin-left: 3px; }
+        #annual-view-wrapper .calendar-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 0.7rem; text-align: center; }
+        #annual-view-wrapper .calendar-table th { font-weight: bold; padding: 0.1rem 0; color: #555; font-size: 0.65rem;}
+        #annual-view-wrapper .calendar-table td {
+            padding: 0.5rem 0; 
+            border: none;
+            line-height: 1.2; 
+            position: relative;
         }
+        #annual-view-wrapper .calendar-table .annual-weekend-day { background-color: var(--annual-weekend-highlight-color); border-radius: 2px; }
+        #annual-view-wrapper .calendar-table .empty-day { visibility: hidden; }
+        #annual-view-wrapper .controls-container { margin-bottom: 1rem; padding: 0.5rem 0; text-align: center; border-bottom: 1px solid #eee; background-color: #fff; border-radius: 0.25rem; }
+        #annual-view-wrapper .controls-container label { margin-right: 0.5rem; font-size: 0.9rem; }
+        #annual-view-wrapper .controls-container input[type="number"] { width: 80px; padding: 0.2rem 0.4rem; font-size: 0.9rem; margin-right: 0.5rem; vertical-align: middle; }
+        #annual-view-wrapper .controls-container .btn { padding: 0.2rem 0.8rem; font-size: 0.9rem; vertical-align: middle; margin-left: 10px; }
+        #annual-view-wrapper .controls-container .form-check-label { font-size: 0.9rem; vertical-align: middle; }
+        #annual-view-wrapper .controls-container .form-check-input { vertical-align: middle; }
+        #annual-view-wrapper .controls-container .form-check { margin-left: 0.5rem; display: inline-block; }
 
-        /* --- Annual View Specific Styles --- */
-         #annual-view-wrapper #annual-main-title {
-             text-align: center; margin-bottom: 0.25rem;
-         }
-         #annual-view-wrapper #annual-main-title[contenteditable="true"] {
-             cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent;
-             transition: border-color 0.2s ease;
-         }
-         #annual-view-wrapper #annual-main-title[contenteditable="true"]:hover,
-         #annual-view-wrapper #annual-main-title[contenteditable="true"]:focus {
-             border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03);
-         }
-         #annual-view-wrapper .editable-hint {
-            font-size: 0.8rem; text-align: center; color: #6c757d;
-            margin-top: -0.2rem; margin-bottom: 0.5rem; min-height: 1em;
-         }
-         #annual-view-wrapper #calendar-year-range-display {
-            font-size: 1.8rem;
-            font-weight: bold; text-align: center; margin-bottom: 0.1rem;
-         }
-         #annual-view-wrapper #calendar-view-subtitle {
-             font-size: 1rem; text-align: center; color: #6c757d;
-             margin-top: -0.1rem; margin-bottom: 1rem; min-height: 1.5em;
-         }
-         #annual-view-wrapper .month-container {
-             margin-bottom: 1.5rem; padding: 0 10px; display: none;
-         }
-         #annual-view-wrapper .month-container.visible { display: block; }
-         #annual-view-wrapper .month-name {
-             font-size: 1rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem;
-         }
-          #annual-view-wrapper .month-name .year-suffix {
-              font-size: 0.75rem; font-weight: normal; color: #888; margin-left: 4px;
-          }
-         #annual-view-wrapper .calendar-table {
-             width: 100%; table-layout: fixed; border-collapse: collapse;
-             font-size: 0.75rem; text-align: center;
-         }
-         #annual-view-wrapper .calendar-table th { font-weight: bold; padding: 0.15rem 0; color: #555; }
-         #annual-view-wrapper .calendar-table td { padding: 0.1rem 0; border: none; line-height: 1.3; }
-         #annual-view-wrapper .calendar-table .empty-day { visibility: hidden; }
-         #annual-view-wrapper .controls-container {
-             margin-bottom: 1.5rem; padding: 0.5rem 0; text-align: center;
-             border-bottom: 1px solid #eee; background-color: #fff;
-             border-radius: 0.25rem;
-         }
-         #annual-view-wrapper .controls-container label { margin-right: 0.5rem; font-size: 0.9rem; }
-         #annual-view-wrapper .controls-container input[type="number"] {
-             width: 80px; padding: 0.2rem 0.4rem; font-size: 0.9rem;
-             margin-right: 0.5rem; vertical-align: middle;
-         }
-         #annual-view-wrapper .controls-container .btn {
-             padding: 0.2rem 0.8rem; font-size: 0.9rem;
-             vertical-align: middle; margin-left: 10px;
-         }
-         #annual-view-wrapper .controls-container .form-check-label { font-size: 0.9rem; vertical-align: middle; }
-         #annual-view-wrapper .controls-container .form-check-input { vertical-align: middle; }
-         #annual-view-wrapper .controls-container .form-check { margin-left: 0.5rem; display: inline-block; }
-
-        /* --- Monthly View Specific Styles --- */
-        #monthly-view-wrapper .calendar-section-wrapper {
-             background-color: var(--calendar-bg); color: var(--calendar-text-color);
-             border: 1px solid var(--calendar-border-color); padding: 1rem;
-             border-radius: 0.25rem; margin-top: 1rem;
-             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-        #monthly-view-wrapper #monthly-main-title {
-            text-align: center;
-            /* Color is set by theme-specific rules */
-            transition: color 0.3s ease;
-        }
-        #monthly-view-wrapper #monthly-main-title[contenteditable="true"] {
-            cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent;
-            transition: border-color 0.2s ease, background-color 0.2s ease;
-            display: inline-block;
-        }
+        #monthly-view-wrapper .calendar-section-wrapper { background-color: var(--calendar-bg); color: var(--calendar-text-color); border: 1px solid var(--calendar-border-color); padding: 1rem; border-radius: 0.25rem; margin-top: 1rem; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+        #monthly-view-wrapper #monthly-main-title { text-align: center; transition: color 0.3s ease; }
+        #monthly-view-wrapper #monthly-main-title[contenteditable="true"] { cursor: text; padding: 0.2rem 0.5rem; border: 1px dashed transparent; transition: border-color 0.2s ease, background-color 0.2s ease; display: inline-block; }
         #monthly-view-wrapper #monthly-main-title[contenteditable="true"]:hover,
-        #monthly-view-wrapper #monthly-main-title[contenteditable="true"]:focus {
-            border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03);
+        #monthly-view-wrapper #monthly-main-title[contenteditable="true"]:focus { border-color: #adb5bd; outline: none; background-color: rgba(0, 0, 0, 0.03); }
+        #monthly-view-wrapper .editable-hint { font-size: 0.8rem; text-align: center; color: #6c757d; margin-top: 0; margin-bottom: 1rem; min-height: 1em; display: block; }
+        #monthly-view-wrapper .calendar-table { width: 100%; border-collapse: collapse; background-color: var(--calendar-bg); color: var(--calendar-text-color); transition: background-color 0.3s ease; }
+        #monthly-view-wrapper .calendar-table th { text-align: center; font-weight: bold; background-color: var(--calendar-header-bg); color: var(--calendar-header-text); padding: 0.5rem; width: 14.28%; border: var(--calendar-border-width) solid var(--calendar-border-color); transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+        #monthly-view-wrapper .calendar-table td { height: 100px; vertical-align: top; padding: 0.3rem; position: relative; border: var(--calendar-border-width) solid var(--calendar-border-color); font-family: var(--calendar-font-family); color: var(--calendar-text-color); background-color: var(--calendar-bg); transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; cursor: default; }
+        
+        /* Cambio 2: Ajuste del centrado vertical del lápiz */
+        #monthly-view-wrapper .calendar-table td .day-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ocupa el espacio de contenido del TD padre (td height - td padding) */
+            box-sizing: border-box; /* Padding no aumenta el tamaño total */
+            position: relative; /* Para el .day-number absoluto */
+            padding-top: 1.5em;  /* Espacio para el day-number (font-size: 0.8em, top: 2px). 1.5em relativo al font-size del wrapper */
+            padding-left: 2px;   /* Pequeño padding lateral */
+            padding-right: 2px;
+            padding-bottom: 2px; /* Pequeño padding inferior */
         }
-         #monthly-view-wrapper .editable-hint {
-             font-size: 0.8rem; text-align: center; color: #6c757d;
-             margin-top: 0; margin-bottom: 1rem; min-height: 1em; display: block;
-         }
-        #monthly-view-wrapper .calendar-table {
-            width: 100%; border-collapse: collapse;
-            background-color: var(--calendar-bg); color: var(--calendar-text-color);
-            transition: background-color 0.3s ease;
-        }
-        #monthly-view-wrapper .calendar-table th {
-            text-align: center; font-weight: bold;
-            background-color: var(--calendar-header-bg); color: var(--calendar-header-text);
-            padding: 0.5rem; width: 14.28%;
-            border: var(--calendar-border-width) solid var(--calendar-border-color);
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-        #monthly-view-wrapper .calendar-table td {
-            height: 100px; vertical-align: top; padding: 0.3rem; position: relative;
-            border: var(--calendar-border-width) solid var(--calendar-border-color);
-            font-family: var(--calendar-font-family);
-            color: var(--calendar-text-color); /* Ensure day content uses main text color */
-            background-color: var(--calendar-bg); /* Default cell background */
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-        }
-        #monthly-view-wrapper .calendar-table td .day-number {
-            font-size: var(--calendar-day-number-size); font-weight: bold;
-            color: var(--calendar-day-number-color);
-            position: absolute; top: 2px; right: 4px;
-            transition: color 0.3s ease;
-        }
-        #monthly-view-wrapper .calendar-table td.empty-cell { background-color: var(--calendar-empty-cell-bg); }
+        #monthly-view-wrapper .calendar-table td .day-number { font-size: var(--calendar-day-number-size); font-weight: bold; color: var(--calendar-day-number-color); position: absolute; top: 2px; right: 4px; transition: color 0.3s ease; z-index: 1; }
+        #monthly-view-wrapper .calendar-table td.empty-cell { background-color: var(--calendar-empty-cell-bg); cursor: not-allowed; }
         #monthly-view-wrapper .calendar-table td.weekend-cell { background-color: var(--calendar-weekend-bg); }
         #monthly-view-wrapper #settings-button { font-size: 1.5rem; }
-         #monthly-view-wrapper .controls-section {
-            background-color: #fff;
-         }
+        #monthly-view-wrapper .controls-section { background-color: #fff; }
 
-        /* --- Print Styles --- */
+        .annotation-toolbar { background-color: #f8f9fa; padding: 0.5rem; margin-bottom: 1rem; border-radius: 0.25rem; border: 1px solid #dee2e6; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+        .annotation-toolbar .tool-group { display: flex; align-items: center; }
+        .annotation-toolbar .tool-group .btn-group .btn { font-size: 0.85rem; padding: 0.25rem 0.6rem; }
+        .annotation-toolbar .tool-group .btn-group .btn.active { background-color: var(--tool-active-bg); color: var(--tool-active-text); border-color: var(--tool-active-bg); }
+        .annotation-toolbar .tool-options { display: none; align-items: center; gap: 0.5rem; margin-left: 0.5rem; padding-left: 0.5rem; border-left: 1px solid #ccc; }
+        .annotation-toolbar .tool-options.active { display: flex; flex-wrap: wrap; }
+        .annotation-toolbar .tool-options label { font-size: 0.8rem; margin-bottom: 0; margin-right: 0.25rem; }
+        .annotation-toolbar .tool-options .form-select-sm,
+        .annotation-toolbar .tool-options .form-control-sm { font-size: 0.8rem; max-width: 120px; }
+        .annotation-toolbar .tool-options input[type="color"] { width: 30px; height: 30px; padding: 0.1rem; border: 1px solid #ccc; border-radius: 0.25rem; cursor: pointer; }
+        .annotation-toolbar .tool-options .btn-group .btn { font-size: 0.85rem; padding: 0.25rem 0.6rem; }
+        .annotation-toolbar .tool-options .btn-group .btn.active { background-color: var(--tool-active-bg); color: var(--tool-active-text); border-color: var(--tool-active-bg); }
+        .annotation-toolbar .color-palette button { width: 24px; height: 24px; border-radius: 50%; border: 1px solid #ccc; margin: 0 2px; padding: 0; }
+        .annotation-toolbar .color-palette button.active { border-width: 2px; border-color: var(--tool-active-bg); box-shadow: 0 0 0 1px white, 0 0 0 2px var(--tool-active-bg); }
+        #annual-annotation-toolbar-wrapper .annotation-toolbar button[data-tool="pencil"],
+        #annual-annotation-toolbar-wrapper .annotation-toolbar .tool-options[data-tool-options="pencil"] { display: none !important; }
+
+        .day-annotation-text {
+            font-size: 0.75rem;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            /* padding y margin-top eliminados, ahora gestionados por .day-content-wrapper */
+            line-height: 1.3;
+            cursor: text;
+            overflow-y: auto; /* Para scroll si el texto es largo */
+            max-height: 100%; /* Para asegurar que no desborde el wrapper si es muy largo, permitiendo scroll */
+        }
+        .day-mark-symbol { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem; font-weight: bold; pointer-events: none; z-index: 0; }
+        #annual-view-wrapper .calendar-table td .day-mark-symbol { font-size: 0.9rem; line-height: 1; }
+        #annual-view-wrapper .calendar-table td .annual-day-bg-highlight { position: absolute; top: 1px; bottom: 1px; left: 1px; right: 1px; border-radius: 2px; opacity: 0.7; pointer-events: none; z-index: -1; }
+
  @media print {
-     @page {
-        size: landscape; /* Mantenemos landscape para la mensual */
-        margin: 8mm;
-     }
-
-    .navbar,
-    .d-print-none,
-    #settings-button, /* Añadido por si acaso */
-    .controls-section, /* Añadido por si acaso */
-    .modal, .modal-backdrop,
-    .editable-hint { display: none !important; }
-
-    body {
-        padding-top: 0 !important;
-        background-color: #fff !important; /* Mantenemos fondo blanco base para el papel */
-        /* Eliminamos color: #000 !important; para usar la variable del tema */
-        font-size: 10pt;
-        /* IMPORTANTE: Usar la variable de fuente seleccionada */
-        font-family: var(--calendar-font-family, sans-serif);
-        -webkit-print-color-adjust: exact !important; /* Permitir impresión de colores */
-        print-color-adjust: exact !important;
-    }
-     .container-fluid { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
-
+     @page { margin: 8mm; }
+    .navbar, .d-print-none, #settings-button, .controls-section, .annotation-toolbar, .modal, .modal-backdrop, .editable-hint { display: none !important; }
+    body { padding-top: 0 !important; background-color: #fff !important; font-size: 10pt; font-family: var(--calendar-font-family, sans-serif); -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .container-fluid { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
     .view-wrapper:not(.active) { display: none !important; }
-
-    /* --- Annual Print (Mantenemos simple para legibilidad) --- */
     #annual-view-wrapper .controls-container { display: none !important; }
     #annual-view-wrapper { padding: 0 5mm; }
     #annual-view-wrapper #annual-main-title[contenteditable="true"],
-    #annual-view-wrapper #annual-main-title {
-        border: none !important; padding: 0 !important; cursor: default;
-        background-color: transparent !important; font-size: 38pt !important;
-        text-align: center; margin-bottom: 2mm;
-        color: #000 !important; /* Mantenemos negro para el título principal por legibilidad */
-        display: block !important;
-    }
-     #annual-view-wrapper #calendar-year-range-display { font-size: 24pt; margin-bottom: 0.1cm; color: #000 !important; } /* Mantenemos negro */
-     #annual-view-wrapper #calendar-view-subtitle { font-size: 10pt; margin-bottom: 0.5cm; color: #333 !important; } /* Mantenemos gris oscuro */
-     #annual-view-wrapper #annual-calendar-container.row {
-         display: flex !important; flex-wrap: wrap !important;
-         align-items: flex-start;
+    #annual-view-wrapper #annual-main-title { border: none !important; padding: 0 !important; cursor: default; background-color: transparent !important; font-size: 38pt !important; text-align: center; margin-bottom: 2mm; color: #000 !important; display: block !important; }
+    #annual-view-wrapper #calendar-year-range-display { font-size: 24pt; margin-bottom: 0.1cm; color: #000 !important; }
+    #annual-view-wrapper #calendar-view-subtitle { display: none !important; }
+    #annual-view-wrapper #annual-calendar-container.row { display: flex !important; flex-wrap: wrap !important; align-items: flex-start; justify-content: flex-start; }
+    
+    #annual-view-wrapper .month-container.visible {
+        display: block !important; 
+        flex: 0 0 30.3%; 
+        max-width: 30.3%; 
+        margin-left: 1.5%; 
+        margin-right: 1.5%; 
+        margin-bottom: 1cm; 
+        page-break-inside: avoid !important; 
+        border: 1px solid #ccc;
+        padding: 2px; 
+        box-sizing: border-box;
      }
-     #annual-view-wrapper .month-container.visible {
-          display: block !important; flex: 0 0 19.5%; max-width: 19.5%;
-          page-break-inside: avoid !important; margin-bottom: 0.8cm;
-          margin-right: 0.25%; margin-left: 0.25%; border: 1px solid #ccc; /* Borde simple para la caja */
-          padding: 4px; box-sizing: border-box;
-     }
-     #annual-view-wrapper .month-name { font-size: 9pt; color: #000 !important;} /* Texto negro simple */
+
+     #annual-view-wrapper .month-name { font-size: 8pt; color: #000 !important;}
      #annual-view-wrapper .month-name .year-suffix { color: #333 !important; }
-     #annual-view-wrapper .calendar-table { font-size: 6.5pt; color: #000 !important; } /* Texto negro simple */
-     #annual-view-wrapper .calendar-table th { color: #000 !important; padding: 0.2px 0; font-weight: bold; } /* Texto negro simple */
-     #annual-view-wrapper .calendar-table td { color: #000 !important; padding: 0.2px 0; } /* Texto negro simple */
+     #annual-view-wrapper .calendar-table { font-size: 6pt; color: #000 !important; }
+     #annual-view-wrapper .calendar-table th { color: #000 !important; padding: 0.1px 0; font-weight: bold; }
+     #annual-view-wrapper .calendar-table td {
+         color: #000 !important;
+         padding: 3.5pt 0; 
+         background-color: transparent !important;
+         vertical-align: middle; 
+     }
+     #annual-view-wrapper .calendar-table .annual-weekend-day { background-color: var(--annual-weekend-highlight-color) !important; }
+     #annual-view-wrapper .calendar-table .annual-day-bg-highlight { opacity: 0.7 !important; }
      #annual-view-wrapper .calendar-table .empty-day { visibility: hidden; }
 
-     /* --- Monthly Print (Aplicando Estilos Visuales) --- */
      #monthly-view-wrapper #monthly-main-title[contenteditable="true"],
-     #monthly-view-wrapper #monthly-main-title {
-          border: none !important; padding: 0 !important; cursor: default;
-          background-color: transparent !important; font-size: 38pt !important;
-          text-align: center; margin-bottom: 2mm;
-          color: #000 !important; /* Mantenemos negro para el título principal por legibilidad */
-          display: block !important;
-      }
-      #monthly-view-wrapper header.mb-3 { margin-bottom: 0 !important; }
-      #monthly-view-wrapper #calendar-output { margin-top: 0 !important; }
-      #monthly-view-wrapper .calendar-section-wrapper {
-          border: none !important; /* Quitamos el borde del wrapper, la tabla ya tiene */
-          padding: 0;
-          background-color: transparent !important; /* El fondo lo da la tabla/celdas */
-          color: var(--calendar-text-color); /* Usar color de texto del tema */
-      }
-     #monthly-view-wrapper #calendar-title {
-          display: block !important; text-align: center; font-size: 28pt;
-          font-weight: normal; margin-bottom: 5mm;
-          color: var(--calendar-header-text, #000); /* Usar color de cabecera del tema, fallback a negro */
-     }
-
-     /* --- Estilos de Tabla Mensual para Impresión con Variables --- */
-     #monthly-view-wrapper .calendar-table {
-         border-collapse: collapse; /* Asegurar bordes limpios */
-         width: 100%;
-         color: var(--calendar-text-color); /* Color de texto general de la tabla */
-     }
+     #monthly-view-wrapper #monthly-main-title { border: none !important; padding: 0 !important; cursor: default; background-color: transparent !important; font-size: 38pt !important; text-align: center; margin-bottom: 2mm; color: #000 !important; display: block !important; }
+     #monthly-view-wrapper header.mb-3 { margin-bottom: 0 !important; }
+     #monthly-view-wrapper #calendar-output { margin-top: 0 !important; }
+     #monthly-view-wrapper .calendar-section-wrapper { border: none !important; padding: 0; background-color: transparent !important; color: var(--calendar-text-color); }
+     #monthly-view-wrapper #calendar-title { display: block !important; text-align: center; font-size: 28pt; font-weight: normal; margin-bottom: 5mm; color: var(--calendar-header-text, #000); }
+     #monthly-view-wrapper .calendar-table { border-collapse: collapse; width: 100%; color: var(--calendar-text-color); }
      #monthly-view-wrapper .calendar-table th,
-     #monthly-view-wrapper .calendar-table td {
-         /* Usar variables para el borde */
-         border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #000) !important;
-         -webkit-print-color-adjust: exact !important; /* Forzar colores */
-         print-color-adjust: exact !important;
-     }
-
-     #monthly-view-wrapper .calendar-table th {
-         /* Usar variables para la cabecera */
-         background-color: var(--calendar-header-bg) !important;
-         color: var(--calendar-header-text) !important;
-         font-weight: bold;
-         text-align: center;
-         padding: 0.3rem;
-     }
-
-     #monthly-view-wrapper .calendar-table td {
-         height: 2.6cm; /* Altura fija para impresión */
-         font-size: 9pt;
-         vertical-align: top;
-         padding: 0.3rem;
-         position: relative;
-         /* Usar variable para el fondo normal de celda */
-         background-color: var(--calendar-bg) !important;
-         /* El color del texto dentro de la celda ya viene de .calendar-table o .body */
-     }
-
-     #monthly-view-wrapper .calendar-table td .day-number {
-         /* Usar variable para el número del día */
-         color: var(--calendar-day-number-color) !important;
-         font-size: 0.7em;
-         position: absolute; top: 2px; right: 4px; /* Mantenemos posición */
-     }
-
-     #monthly-view-wrapper .calendar-table td.weekend-cell {
-         /* Usar variable para el fondo de fin de semana */
-         background-color: var(--calendar-weekend-bg) !important;
-     }
-
-     #monthly-view-wrapper .calendar-table td.empty-cell {
-         /* Usar variable para celdas vacías */
-         background-color: var(--calendar-empty-cell-bg) !important;
-         /* Aseguramos que el borde sea visible y use el color del tema */
-         border-color: var(--calendar-border-color, #ccc) !important;
-     }
-
-     /* Eliminar regla general que forzaba negro en todos los H/P */
-     /* #monthly-view-wrapper h1, #monthly-view-wrapper h2, #monthly-view-wrapper h3, #monthly-view-wrapper p { color: #000 !important; } */
+     #monthly-view-wrapper .calendar-table td { border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #000) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+     #monthly-view-wrapper .calendar-table th { background-color: var(--calendar-header-bg) !important; color: var(--calendar-header-text) !important; font-weight: bold; text-align: center; padding: 0.3rem; }
+     #monthly-view-wrapper .calendar-table td { height: 2.6cm; font-size: 9pt; vertical-align: top; padding: 0.3rem; position: relative; background-color: var(--calendar-bg); }
+     #monthly-view-wrapper .calendar-table td .day-number { color: var(--calendar-day-number-color) !important; font-size: 0.7em; position: absolute; top: 2px; right: 4px; }
+     #monthly-view-wrapper .calendar-table td.weekend-cell { background-color: var(--calendar-weekend-bg) !important; }
+     #monthly-view-wrapper .calendar-table td.empty-cell { background-color: var(--calendar-empty-cell-bg) !important; border-color: var(--calendar-border-color, #ccc) !important; }
+     #monthly-view-wrapper .day-annotation-text { }
 }
+    /* Cambio 1: Ajuste de margen para calendario anual imprimible en apaisado */
+    @media print and (orientation: landscape) {
+        #annual-view-wrapper .month-container.visible {
+            margin-bottom: 0.25cm; /* Reducido desde 1cm para mejor ajuste en altura */
+        }
+        /* Opcional: si aún no caben, se podría reducir un poco el padding de las celdas td */
+        /* #annual-view-wrapper .calendar-table td { padding: 2.8pt 0; } */
+    }
     </style>
 </head>
 <body class="theme-contrast">
@@ -455,7 +316,6 @@
 
     <div class="container-fluid mt-4">
 
-        <!-- ================== ANNUAL VIEW ================== -->
         <div id="annual-view-wrapper" class="view-wrapper">
             <div class="controls-container d-print-none">
                 <label for="annual-year-select">Año (inicio):</label>
@@ -475,17 +335,18 @@
                 </div>
             </div>
 
+            <div id="annual-annotation-toolbar-wrapper" class="annotation-toolbar-container d-print-none mb-3">
+                </div>
+
             <h1 id="annual-main-title" contenteditable="true" class="d-print-inline">Calendario Anual</h1>
             <p class="editable-hint d-print-none">Haz clic en el título para editarlo.</p>
             <h2 id="calendar-year-range-display"></h2>
             <p id="calendar-view-subtitle"></p>
 
-            <div id="annual-calendar-container" class="row">
-                <!-- Calendarios mensuales pequeños se generan aquí -->
+            <div id="annual-calendar-container" class="row gx-4"> 
             </div>
         </div>
 
-        <!-- ================== MONTHLY VIEW ================== -->
         <div id="monthly-view-wrapper" class="view-wrapper">
             <header class="d-flex justify-content-between align-items-center mb-3">
                  <div class="text-center flex-grow-1">
@@ -511,6 +372,9 @@
                     </div>
                  </div>
             </section>
+
+            <div id="monthly-annotation-toolbar-wrapper" class="annotation-toolbar-container d-print-none mb-3">
+            </div>
 
             <div class="modal fade d-print-none" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
@@ -607,57 +471,197 @@
             const viewWrappers = document.querySelectorAll('.view-wrapper');
             const generalPrintBtn = document.getElementById('general-print-btn');
             const pageTitleElement = document.getElementById('page-title');
+            const monthlyAnnotationToolbarWrapper = document.getElementById('monthly-annotation-toolbar-wrapper');
+            const annualAnnotationToolbarWrapper = document.getElementById('annual-annotation-toolbar-wrapper');
 
-            let currentView = 'annual';
+            let currentView = 'annual'; 
+            let activeTool = null; 
+            let annotations = {}; 
+            let shiftSelectionAnchor = null; // Para selección de rango con Shift {year, month, day, view}
 
-            function setActiveView(viewName) {
-                currentView = viewName;
-                viewWrappers.forEach(wrapper => {
-                    wrapper.classList.toggle('active', wrapper.id === `${viewName}-view-wrapper`);
-                });
-                navLinks.forEach(link => {
-                    const isActive = link.dataset.view === viewName;
-                    link.classList.toggle('active', isActive);
-                    if (isActive) link.setAttribute('aria-current', 'page');
-                    else link.removeAttribute('aria-current');
-                });
+            let monthlyToolSettings = {
+                pencil: { 
+                    font: "'Lato', sans-serif", size: "12px", color: "#000000",
+                    bold: false, italic: false, textAlign: "left", 
+                    textAlignVertical: "flex-start" // flex-start, center, flex-end
+                },
+                marker: { type: "V", color: "green" },
+                bgColor: { color: "#FFFF00" }
+            };
+            let annualToolSettings = {
+                // Pencil no se usa en anual, pero se mantiene la estructura
+                pencil: { font: "'Lato', sans-serif", size: "10px", color: "#333333", bold: false, italic: false, textAlign: "left", textAlignVertical: "flex-start" },
+                marker: { type: "V", color: "#DC3545" }, 
+                bgColor: { color: "#ADD8E6" }  
+            };
+            let activeToolSettings = annualToolSettings; 
 
-                 let activeMainTitleElement;
-                 if (viewName === 'annual') {
-                    activeMainTitleElement = document.getElementById('annual-main-title');
-                    pageTitleElement.textContent = activeMainTitleElement ? (activeMainTitleElement.textContent || 'Calendario Anual') : 'Calendario Anual';
-                 } else if (viewName === 'monthly') {
-                    activeMainTitleElement = document.getElementById('monthly-main-title');
-                     // Use title from settings which reflects the current state
-                     pageTitleElement.textContent = monthlyViewLogic?.getCurrentSettings()?.mainTitle || 'Calendario Mensual';
-                 } else {
-                     pageTitleElement.textContent = 'Calendarios Escolares y Mensuales';
-                 }
+            const ANNOTATIONS_STORAGE_KEY = 'calendarAnnotationsV1';
+            const ANNUAL_SETTINGS_STORAGE_KEY = 'annualCalendarSettingsV1';
+            const MONTHLY_SETTINGS_STORAGE_KEY = 'calendarSettingsV3';
 
+            function loadAnnotations() { const storedAnnotations = localStorage.getItem(ANNOTATIONS_STORAGE_KEY); if (storedAnnotations) { try { annotations = JSON.parse(storedAnnotations); } catch (e) { annotations = {}; } } else { annotations = {}; } }
+            function saveAnnotations() { try { localStorage.setItem(ANNOTATIONS_STORAGE_KEY, JSON.stringify(annotations)); } catch (e) { console.error("Error al guardar anotaciones:", e); } }
+            function getAnnotationKey(year, month, day) { return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`; }
 
-                 console.log(`Vista cambiada a: ${viewName}`);
+            function generateToolbarHTML(settings, idPrefix = '') {
+                const fonts = [ { name: "Lato", value: "'Lato', sans-serif" }, { name: "Roboto", value: "'Roboto', sans-serif" }, { name: "Montserrat", value: "'Montserrat', sans-serif" }, { name: "Arial", value: "Arial, sans-serif" }, { name: "Verdana", value: "Verdana, sans-serif" }, { name: "Times New Roman", value: "'Times New Roman', Times, serif" }, { name: "Courier New", value: "'Courier New', Courier, monospace" } ];
+                const fontSizes = ["8px", "10px", "12px", "14px", "16px", "18px", "20px"];
+                const markColors = [ { name: "Verde", value: "green" }, { name: "Rojo", value: "red" }, { name: "Azul", value: "blue" }, { name: "Naranja", value: "orange" }, { name: "Morado", value: "purple" }, { name: "Negro", value: "black" } ];
+                const bgPalette = [ "#FFFFE0", "#ADD8E6", "#90EE90", "#FFB6C1", "#FFA07A", "#DDA0DD", "#F0E68C", "#FFFFFF", "#C0C0C0" ];
+
+                // Opciones de formato de texto solo para la barra de herramientas mensual (idPrefix === '')
+                const textFormatOptionsHTML = idPrefix === '' ? `
+                    <div class="btn-group btn-group-sm mt-1" role="group" aria-label="Estilo de texto">
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.bold ? 'active' : ''}" data-format="bold" title="Negrita"><i class="bi bi-type-bold"></i></button>
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.italic ? 'active' : ''}" data-format="italic" title="Cursiva"><i class="bi bi-type-italic"></i></button>
+                    </div>
+                    <div class="btn-group btn-group-sm mt-1 ms-1" role="group" aria-label="Alineación Horizontal">
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlign === 'left' ? 'active' : ''}" data-align="left" title="Alinear Izquierda"><i class="bi bi-text-left"></i></button>
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlign === 'center' ? 'active' : ''}" data-align="center" title="Alinear Centro"><i class="bi bi-text-center"></i></button>
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlign === 'right' ? 'active' : ''}" data-align="right" title="Alinear Derecha"><i class="bi bi-text-right"></i></button>
+                    </div>
+                    <div class="btn-group btn-group-sm mt-1 ms-1" role="group" aria-label="Alineación Vertical">
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlignVertical === 'flex-start' ? 'active' : ''}" data-valign="flex-start" title="Alinear Arriba"><i class="bi bi-align-top"></i></button>
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlignVertical === 'center' ? 'active' : ''}" data-valign="center" title="Alinear Medio"><i class="bi bi-align-middle"></i></button>
+                        <button type="button" class="btn btn-outline-secondary ${settings.pencil.textAlignVertical === 'flex-end' ? 'active' : ''}" data-valign="flex-end" title="Alinear Abajo"><i class="bi bi-align-bottom"></i></button>
+                    </div>
+                ` : '';
+
+                return `
+                    <div class="annotation-toolbar">
+                        <div class="tool-group">
+                            <div class="btn-group" role="group" aria-label="Herramientas de anotación">
+                                <button type="button" class="btn btn-outline-secondary" data-tool="cursor" title="Cursor"><i class="bi bi-mouse-fill"></i></button>
+                                <button type="button" class="btn btn-outline-secondary" data-tool="pencil" title="Lápiz"><i class="bi bi-pencil-fill"></i></button>
+                                <button type="button" class="btn btn-outline-secondary" data-tool="marker" title="Marcas"><i class="bi bi-check2-square"></i></button>
+                                <button type="button" class="btn btn-outline-secondary" data-tool="bgColor" title="Fondo"><i class="bi bi-palette-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="tool-options" data-tool-options="pencil">
+                            <label for="${idPrefix}pencil-font-select">Fuente:</label>
+                            <select id="${idPrefix}pencil-font-select" class="form-select form-select-sm">${fonts.map(f => `<option value="${f.value}" ${f.value === settings.pencil.font ? 'selected' : ''}>${f.name}</option>`).join('')}</select>
+                            <label for="${idPrefix}pencil-size-select">Tamaño:</label>
+                            <select id="${idPrefix}pencil-size-select" class="form-select form-select-sm">${fontSizes.map(s => `<option value="${s}" ${s === settings.pencil.size ? 'selected' : ''}>${s}</option>`).join('')}</select>
+                            <label for="${idPrefix}pencil-color-input">Color:</label>
+                            <input type="color" id="${idPrefix}pencil-color-input" class="form-control form-control-sm form-control-color" value="${settings.pencil.color}" title="Color texto">
+                            ${textFormatOptionsHTML}
+                        </div>
+                        <div class="tool-options" data-tool-options="marker">
+                            <label>Tipo:</label>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <input type="radio" class="btn-check" name="${idPrefix}marker-type" id="${idPrefix}marker-v" value="V" ${settings.marker.type === 'V' ? 'checked' : ''}><label class="btn btn-outline-primary" for="${idPrefix}marker-v"><i class="bi bi-check-lg"></i></label>
+                                <input type="radio" class="btn-check" name="${idPrefix}marker-type" id="${idPrefix}marker-x" value="X" ${settings.marker.type === 'X' ? 'checked' : ''}><label class="btn btn-outline-primary" for="${idPrefix}marker-x"><i class="bi bi-x-lg"></i></label>
+                            </div>
+                            <label for="${idPrefix}marker-color-select">Color:</label>
+                            <select id="${idPrefix}marker-color-select" class="form-select form-select-sm">${markColors.map(c => `<option value="${c.value}" ${c.value === settings.marker.color ? 'selected' : ''}>${c.name}</option>`).join('')}</select>
+                        </div>
+                        <div class="tool-options" data-tool-options="bgColor">
+                            <label>Color:</label>
+                            <div class="color-palette d-flex align-items-center">${bgPalette.map(color => `<button type="button" class="color-palette-btn ${settings.bgColor.color === color ? 'active' : ''}" data-color="${color}" style="background-color: ${color};" title="${color}"></button>`).join('')}
+                                <input type="color" id="${idPrefix}bgColor-custom-input" class="form-control form-control-sm form-control-color ms-2" value="${settings.bgColor.color}" title="Color personalizado">
+                            </div>
+                        </div>
+                    </div>`;
             }
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const view = e.target.dataset.view;
-                    if (view) setActiveView(view);
-                });
-            });
+            function initializeToolbars() { if (monthlyAnnotationToolbarWrapper) monthlyAnnotationToolbarWrapper.innerHTML = generateToolbarHTML(monthlyToolSettings, ''); if (annualAnnotationToolbarWrapper) annualAnnotationToolbarWrapper.innerHTML = generateToolbarHTML(annualToolSettings, 'annual-'); setupToolbarListeners(); }
+            
+            function setupToolbarListeners() {
+                document.querySelectorAll('.annotation-toolbar').forEach(toolbar => {
+                    const isMonthly = toolbar.closest('#monthly-annotation-toolbar-wrapper') !== null;
+                    const currentSettings = isMonthly ? monthlyToolSettings : annualToolSettings;
+                    const prefix = isMonthly ? '' : 'annual-';
 
-             if (generalPrintBtn) {
-                generalPrintBtn.addEventListener('click', () => {
-                    console.log(`Imprimiendo vista actual: ${currentView}`);
-                    window.print();
+                    toolbar.addEventListener('click', e => {
+                        const toolBtn = e.target.closest('button[data-tool]');
+                        if (toolBtn) { const tool = toolBtn.dataset.tool; if (!isMonthly && tool === 'pencil') { setActiveTool(null, toolbar); return; } setActiveTool(tool === 'cursor' ? null : tool, toolbar); }
+                        
+                        const paletteBtn = e.target.closest('.color-palette-btn[data-color]');
+                        if (paletteBtn && activeTool === 'bgColor') { currentSettings.bgColor.color = paletteBtn.dataset.color; toolbar.querySelectorAll('.color-palette-btn.active').forEach(b => b.classList.remove('active')); paletteBtn.classList.add('active'); const customColorInput = toolbar.querySelector(`#${prefix}bgColor-custom-input`); if (customColorInput) customColorInput.value = currentSettings.bgColor.color; }
+
+                        if (isMonthly && activeTool === 'pencil') {
+                            const formatBtn = e.target.closest('button[data-format]');
+                            if (formatBtn) { const type = formatBtn.dataset.format; if (type === 'bold' || type === 'italic') { currentSettings.pencil[type] = !currentSettings.pencil[type]; formatBtn.classList.toggle('active'); } }
+                            const alignBtn = e.target.closest('button[data-align]');
+                            if (alignBtn) { currentSettings.pencil.textAlign = alignBtn.dataset.align; toolbar.querySelectorAll('button[data-align].active').forEach(b => b.classList.remove('active')); alignBtn.classList.add('active'); }
+                            const valignBtn = e.target.closest('button[data-valign]');
+                            if (valignBtn) { currentSettings.pencil.textAlignVertical = valignBtn.dataset.valign; toolbar.querySelectorAll('button[data-valign].active').forEach(b => b.classList.remove('active')); valignBtn.classList.add('active'); }
+                        }
+                    });
+                    const pencilFont = toolbar.querySelector(`#${prefix}pencil-font-select`); if (pencilFont) pencilFont.onchange = e => currentSettings.pencil.font = e.target.value;
+                    const pencilSize = toolbar.querySelector(`#${prefix}pencil-size-select`); if (pencilSize) pencilSize.onchange = e => currentSettings.pencil.size = e.target.value;
+                    const pencilColor = toolbar.querySelector(`#${prefix}pencil-color-input`); if (pencilColor) pencilColor.oninput = e => currentSettings.pencil.color = e.target.value;
+                    toolbar.querySelectorAll(`input[name="${prefix}marker-type"]`).forEach(r => r.onchange = e => currentSettings.marker.type = e.target.value);
+                    const markerColor = toolbar.querySelector(`#${prefix}marker-color-select`); if (markerColor) markerColor.onchange = e => currentSettings.marker.color = e.target.value;
+                    const bgColorInput = toolbar.querySelector(`#${prefix}bgColor-custom-input`); if (bgColorInput) bgColorInput.oninput = e => { currentSettings.bgColor.color = e.target.value; toolbar.querySelectorAll('.color-palette-btn.active').forEach(b => b.classList.remove('active')); };
                 });
             }
 
-            // --- Lógica de la Vista Anual ---
+            function setActiveTool(toolName, toolbarCtx) { 
+                activeTool = toolName; 
+                if (currentView === 'annual' && activeTool === 'pencil') activeTool = null; // Lápiz no permitido en anual
+
+                // Resetear ancla de selección si la herramienta no es para rango
+                if (toolName !== 'marker' && toolName !== 'bgColor') {
+                    shiftSelectionAnchor = null;
+                }
+
+                document.querySelectorAll('.annotation-toolbar').forEach(tb => { 
+                    tb.querySelectorAll('button[data-tool]').forEach(btn => btn.classList.toggle('active', btn.dataset.tool === activeTool || (activeTool === null && btn.dataset.tool === 'cursor'))); 
+                    tb.querySelectorAll('.tool-options').forEach(op => op.classList.toggle('active', op.dataset.toolOptions === activeTool)); 
+                }); 
+                let cursor = 'default'; 
+                if (activeTool === 'pencil' && currentView === 'monthly') cursor = 'text'; 
+                else if (activeTool === 'marker' || activeTool === 'bgColor') cursor = 'crosshair'; 
+                const monthlyCalBody = document.getElementById('calendar-body'); 
+                if (monthlyCalBody) { monthlyCalBody.style.cursor = cursor; monthlyCalBody.querySelectorAll('td:not(.empty-cell)').forEach(c => c.style.cursor = cursor); } 
+                const annualCalCont = document.getElementById('annual-calendar-container'); 
+                if (annualCalCont) { 
+                    let annualCursor = 'default'; 
+                    if (activeTool === 'marker' || activeTool === 'bgColor') annualCursor = 'crosshair'; 
+                    annualCalCont.style.cursor = annualCursor; 
+                    annualCalCont.querySelectorAll('.annual-day-cell').forEach(c => c.style.cursor = annualCursor); 
+                } 
+            }
+
+            function setActiveView(viewName) { 
+                currentView = viewName; 
+                shiftSelectionAnchor = null; // Resetear ancla al cambiar de vista
+
+                viewWrappers.forEach(w => w.classList.toggle('active', w.id === `${viewName}-view-wrapper`)); 
+                navLinks.forEach(l => { 
+                    const isAct = l.dataset.view === viewName; 
+                    l.classList.toggle('active', isAct); 
+                    if (isAct) l.setAttribute('aria-current', 'page'); 
+                    else l.removeAttribute('aria-current'); 
+                }); 
+                let currentToolbar = null; 
+                if (viewName === 'annual') { 
+                    activeToolSettings = annualToolSettings; 
+                    pageTitleElement.textContent = annualViewLogic.getCurrentTitle() || 'Calendario Anual'; 
+                    if (annualAnnotationToolbarWrapper) { annualAnnotationToolbarWrapper.style.display = 'block'; currentToolbar = annualAnnotationToolbarWrapper.querySelector('.annotation-toolbar'); } 
+                    if (monthlyAnnotationToolbarWrapper) monthlyAnnotationToolbarWrapper.style.display = 'none'; 
+                    if (activeTool === 'pencil') setActiveTool(null, currentToolbar); // Desactivar lápiz si estaba activo
+                    else setActiveTool(activeTool, currentToolbar); 
+                } else if (viewName === 'monthly') { 
+                    activeToolSettings = monthlyToolSettings; 
+                    pageTitleElement.textContent = monthlyViewLogic?.getCurrentSettings()?.mainTitle || 'Calendario Mensual'; 
+                    if (monthlyAnnotationToolbarWrapper) { monthlyAnnotationToolbarWrapper.style.display = 'block'; currentToolbar = monthlyAnnotationToolbarWrapper.querySelector('.annotation-toolbar'); } 
+                    if (annualAnnotationToolbarWrapper) annualAnnotationToolbarWrapper.style.display = 'none'; 
+                    setActiveTool(activeTool, currentToolbar); 
+                } else { 
+                    pageTitleElement.textContent = 'Calendarios'; 
+                    if (monthlyAnnotationToolbarWrapper) monthlyAnnotationToolbarWrapper.style.display = 'none'; 
+                    if (annualAnnotationToolbarWrapper) annualAnnotationToolbarWrapper.style.display = 'none'; 
+                } 
+            }
+            navLinks.forEach(l => l.onclick = e => { e.preventDefault(); const v = e.target.dataset.view; if (v) setActiveView(v); });
+            if (generalPrintBtn) generalPrintBtn.onclick = () => window.print();
+
             const annualViewLogic = (() => {
                 const wrapper = document.getElementById('annual-view-wrapper');
-                if (!wrapper) return { init: () => console.warn("Annual view wrapper not found") };
-
+                if (!wrapper) return { init: () => {}, getCurrentTitle: () => "Calendario Anual", generateRequiredCalendars: () => {} };
                 const calendarContainer = wrapper.querySelector('#annual-calendar-container');
                 const mainTitleElement = wrapper.querySelector('#annual-main-title');
                 const yearRangeDisplayElement = wrapper.querySelector('#calendar-year-range-display');
@@ -665,408 +669,316 @@
                 const yearSelect = wrapper.querySelector('#annual-year-select');
                 const viewRadios = wrapper.querySelectorAll('input[name="viewSelectionAnnual"]');
                 const schoolYearRadio = wrapper.querySelector('#viewSchoolYear');
-
                 const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-                const dayHeaders = ['LU', 'MA', 'MI', 'JU', 'VI', 'SA', 'DO'];
+                const dayHeaders = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+                let currentAnnualSettings = { title: "Calendario Anual", startYear: new Date().getFullYear(), viewType: "school" };
+                function loadAnnualSettings() { const stored = localStorage.getItem(ANNUAL_SETTINGS_STORAGE_KEY); if (stored) try { currentAnnualSettings = { ...currentAnnualSettings, ...JSON.parse(stored) }; } catch (e) {} }
+                function saveAnnualSettings() { currentAnnualSettings.startYear = parseInt(yearSelect.value, 10); currentAnnualSettings.viewType = wrapper.querySelector('input[name="viewSelectionAnnual"]:checked')?.value || 'school'; try { localStorage.setItem(ANNUAL_SETTINGS_STORAGE_KEY, JSON.stringify(currentAnnualSettings)); } catch (e) {} }
+                function createMonthHTML(year, monthIndex) { const daysInMonth = new Date(year, monthIndex + 1, 0).getDate(); const firstDayDateObj = new Date(year, monthIndex, 1); const startDayOfWeek = (firstDayDateObj.getDay() + 6) % 7; let tableHTML = `<div class="col-lg-4 col-md-4 col-sm-6 month-container" data-month="${monthIndex}" data-year="${year}"><h3 class="month-name">${monthNames[monthIndex]}</h3><table class="calendar-table"><thead><tr>`; dayHeaders.forEach(h => { tableHTML += `<th>${h}</th>`; }); tableHTML += `</tr></thead><tbody><tr>`; let dayCounter = 1; let cellCounter = 0; for (let i = 0; i < startDayOfWeek; i++) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; } while (dayCounter <= daysInMonth) { if (cellCounter > 0 && cellCounter % 7 === 0) tableHTML += `</tr><tr>`; const dayDate = new Date(year, monthIndex, dayCounter); const dayOfWeek = (dayDate.getDay() + 6) % 7; let cellClasses = 'annual-day-cell'; if (dayOfWeek === 5 || dayOfWeek === 6) cellClasses += ' annual-weekend-day'; const annotationKey = getAnnotationKey(year, monthIndex, dayCounter); const dayAnnotation = annotations[annotationKey] || {}; tableHTML += `<td class="${cellClasses}" data-day="${dayCounter}"><span>${dayCounter}</span><div class="annual-day-annotations-wrapper">`; if (dayAnnotation.bgColor) tableHTML += `<div class="annual-day-bg-highlight" style="background-color: ${dayAnnotation.bgColor} !important;"></div>`; if (dayAnnotation.mark) tableHTML += `<span class="day-mark-symbol" style="color: ${dayAnnotation.mark.color};">${dayAnnotation.mark.type === 'V' ? '✓' : '✕'}</span>`; tableHTML += `</div></td>`; dayCounter++; cellCounter++; } while (cellCounter % 7 !== 0) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; } tableHTML += `</tr></tbody></table></div>`; return tableHTML; }
+                function updateDynamicTitles(baseYear, view) { if (!yearRangeDisplayElement || !viewSubtitleElement) return; if (view === 'school') { yearRangeDisplayElement.textContent = `${baseYear} - ${baseYear + 1}`; viewSubtitleElement.textContent = 'Año Escolar (Septiembre - Junio)'; } else { yearRangeDisplayElement.textContent = baseYear; viewSubtitleElement.textContent = 'Año Completo (Enero - Diciembre)'; } }
+                function updateVisibleMonthsAndTitle() { const selectedView = currentAnnualSettings.viewType; const baseYear = currentAnnualSettings.startYear; if (isNaN(baseYear)) return; const nextYear = baseYear + 1; const allMonths = calendarContainer.querySelectorAll('.month-container'); updateDynamicTitles(baseYear, selectedView); const schoolYearMonthsBase = [8, 9, 10, 11]; const schoolYearMonthsNext = [0, 1, 2, 3, 4, 5]; let hasVisibleMonths = false; allMonths.forEach(monthDiv => { const monthIndex = parseInt(monthDiv.dataset.month, 10); const monthYear = parseInt(monthDiv.dataset.year, 10); let isVisible = (selectedView === 'full' && monthYear === baseYear) || (selectedView === 'school' && ((monthYear === baseYear && schoolYearMonthsBase.includes(monthIndex)) || (monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex)))); monthDiv.classList.toggle('visible', isVisible); if (isVisible) hasVisibleMonths = true; const monthNameElement = monthDiv.querySelector('.month-name'); if (monthNameElement) { const existingSuffix = monthNameElement.querySelector('.year-suffix'); if (existingSuffix) existingSuffix.remove(); if (isVisible && selectedView === 'school' && monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex)) monthNameElement.insertAdjacentHTML('beforeend', `<span class="year-suffix">(${nextYear})</span>`); else if (isVisible && selectedView === 'school' && monthYear === baseYear && schoolYearMonthsBase.includes(monthIndex)) monthNameElement.insertAdjacentHTML('beforeend', `<span class="year-suffix">(${baseYear})</span>`); else if (isVisible && selectedView === 'full') monthNameElement.insertAdjacentHTML('beforeend', `<span class="year-suffix">(${baseYear})</span>`); } }); calendarContainer.style.display = hasVisibleMonths ? 'flex' : 'none'; }
+                function generateRequiredCalendars() { const baseYear = parseInt(yearSelect.value, 10); if (isNaN(baseYear) || baseYear < 1000 || baseYear > 3000) { alert("Año inválido."); yearSelect.value = new Date().getFullYear(); generateRequiredCalendars(); return; } currentAnnualSettings.startYear = baseYear; calendarContainer.innerHTML = ''; let fullCalendarHTML = ''; for (let i = 0; i < 12; i++) fullCalendarHTML += createMonthHTML(baseYear, i); for (let i = 0; i < 12; i++) fullCalendarHTML += createMonthHTML(baseYear + 1, i); calendarContainer.innerHTML = fullCalendarHTML; updateVisibleMonthsAndTitle(); saveAnnualSettings(); }
+                function handleTitleEdit(event) { const newTitle = event.target.textContent.trim(); currentAnnualSettings.title = newTitle || "Calendario Anual"; event.target.textContent = currentAnnualSettings.title; if (currentView === 'annual') pageTitleElement.textContent = currentAnnualSettings.title; saveAnnualSettings(); }
+                
+                function handleAnnualCellClick(event) {
+                    const cell = event.target.closest('.annual-day-cell:not(.empty-day)');
+                    if (!cell) return;
 
-                let currentAnnualTitle = "Calendario Anual";
+                    const day = parseInt(cell.dataset.day, 10);
+                    const monthContainer = cell.closest('.month-container');
+                    const month = parseInt(monthContainer.dataset.month, 10);
+                    const year = parseInt(monthContainer.dataset.year, 10);
 
-                function createMonthHTML(year, monthIndex) {
-                    const date = new Date(year, monthIndex, 1);
-                    const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
-                    const startDayOfWeek = (date.getDay() + 6) % 7;
+                    const isRangeToolActive = activeTool && (activeTool === 'marker' || activeTool === 'bgColor');
+                    if (activeTool === 'pencil') return; // Lápiz no se usa en anual
 
-                    let tableHTML = `<div class="col-md-4 month-container" data-month="${monthIndex}" data-year="${year}"><h3 class="month-name">${monthNames[monthIndex]}</h3><table class="calendar-table"><thead><tr>`;
+                    if (event.shiftKey && shiftSelectionAnchor && shiftSelectionAnchor.view === 'annual' && isRangeToolActive) {
+                        const start = new Date(shiftSelectionAnchor.year, shiftSelectionAnchor.month, shiftSelectionAnchor.day);
+                        const end = new Date(year, month, day);
 
-                    dayHeaders.forEach(header => { tableHTML += `<th>${header}</th>`; });
-                    tableHTML += `</tr></thead><tbody><tr>`;
+                        const loopStartDate = start <= end ? new Date(start.getFullYear(), start.getMonth(), start.getDate()) : new Date(end.getFullYear(), end.getMonth(), end.getDate());
+                        const loopEndDate = start <= end ? new Date(end.getFullYear(), end.getMonth(), end.getDate()) : new Date(start.getFullYear(), start.getMonth(), start.getDate());
+                        
+                        let iterDate = new Date(loopStartDate);
+                        let changedKeysForDomUpdate = [];
 
-                    let dayCounter = 1; let cellCounter = 0;
-                    for (let i = 0; i < startDayOfWeek; i++) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; }
-                    while (dayCounter <= daysInMonth) {
-                        if (cellCounter > 0 && cellCounter % 7 === 0) { tableHTML += `</tr><tr>`; }
-                        tableHTML += `<td>${dayCounter}</td>`; dayCounter++; cellCounter++;
-                    }
-                    while (cellCounter % 7 !== 0) { tableHTML += `<td class="empty-day"></td>`; cellCounter++; }
-                    tableHTML += `</tr></tbody></table></div>`;
-                    return tableHTML;
-                }
+                        while (iterDate.getTime() <= loopEndDate.getTime()) {
+                            const currentIterYear = iterDate.getFullYear();
+                            const currentIterMonth = iterDate.getMonth();
+                            const currentIterDay = iterDate.getDate();
+                            const key = getAnnotationKey(currentIterYear, currentIterMonth, currentIterDay);
+                            
+                            annotations[key] = annotations[key] || {};
+                            if (activeTool === 'marker') {
+                                annotations[key].mark = { ...activeToolSettings.marker };
+                            } else if (activeTool === 'bgColor') {
+                                annotations[key].bgColor = activeToolSettings.bgColor.color;
+                            }
+                            changedKeysForDomUpdate.push(key);
+                            iterDate.setDate(iterDate.getDate() + 1);
+                        }
+                        saveAnnotations();
 
-                function updateDynamicTitles(baseYear, view) {
-                     if (!yearRangeDisplayElement || !viewSubtitleElement) return;
-                     if (view === 'school') {
-                         yearRangeDisplayElement.textContent = `${baseYear} - ${baseYear + 1}`;
-                         viewSubtitleElement.textContent = 'Año Escolar';
-                     } else {
-                         yearRangeDisplayElement.textContent = baseYear;
-                         viewSubtitleElement.textContent = 'Año Completo';
-                     }
-                }
+                        changedKeysForDomUpdate.forEach(keyToUpdate => {
+                            const [y, m, d] = keyToUpdate.split('-').map(Number);
+                            const mContainer = document.querySelector(`#annual-calendar-container .month-container[data-year="${y}"][data-month="${m-1}"]`);
+                            if (mContainer && mContainer.classList.contains('visible')) { // Solo actualizar si el mes es visible
+                                const dayCell = mContainer.querySelector(`.annual-day-cell[data-day="${d}"]`);
+                                if (dayCell) {
+                                    const annWrapper = dayCell.querySelector('.annual-day-annotations-wrapper');
+                                    if (annWrapper) {
+                                        annWrapper.innerHTML = '';
+                                        if (annotations[keyToUpdate].bgColor) {
+                                            annWrapper.innerHTML += `<div class="annual-day-bg-highlight" style="background-color: ${annotations[keyToUpdate].bgColor} !important;"></div>`;
+                                        }
+                                        if (annotations[keyToUpdate].mark) {
+                                            annWrapper.innerHTML += `<span class="day-mark-symbol" style="color: ${annotations[keyToUpdate].mark.color};">${annotations[keyToUpdate].mark.type === 'V' ? '✓' : '✕'}</span>`;
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    } else { // Clic único o herramienta no de rango o sin ancla válida
+                        if (isRangeToolActive) {
+                            shiftSelectionAnchor = { year, month, day, view: 'annual' };
+                        } else if (!activeTool) { // Cursor
+                            shiftSelectionAnchor = null;
+                        }
+                        
+                        if (!isRangeToolActive) return; // Si no es marker o bgColor (ej. cursor), no hay acción individual aquí
 
-                function updateVisibleMonthsAndTitle() {
-                    const selectedView = wrapper.querySelector('input[name="viewSelectionAnnual"]:checked')?.value || 'school';
-                    const baseYear = parseInt(yearSelect.value, 10);
-                    if (isNaN(baseYear)) { console.error("Año inválido:", yearSelect.value); return; }
-                    const nextYear = baseYear + 1;
-                    const allMonths = calendarContainer.querySelectorAll('.month-container');
+                        const annotationKey = getAnnotationKey(year, month, day);
+                        annotations[annotationKey] = annotations[annotationKey] || {};
+                        let cellNeedsDomUpdate = false;
 
-                    updateDynamicTitles(baseYear, selectedView);
-
-                    const schoolYearMonthsBase = [8, 9, 10, 11];
-                    const schoolYearMonthsNext = [0, 1, 2, 3, 4, 5];
-
-                    let hasVisibleMonths = false;
-
-                    allMonths.forEach(monthDiv => {
-                        const monthIndex = parseInt(monthDiv.dataset.month, 10);
-                        const monthYear = parseInt(monthDiv.dataset.year, 10);
-                        let isVisible = false;
-
-                        if (selectedView === 'full') {
-                            isVisible = (monthYear === baseYear);
-                        } else if (selectedView === 'school') {
-                            isVisible =
-                                (monthYear === baseYear && schoolYearMonthsBase.includes(monthIndex)) ||
-                                (monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex));
+                        if (activeTool === 'marker') {
+                            if (annotations[annotationKey].mark && annotations[annotationKey].mark.type === activeToolSettings.marker.type && annotations[annotationKey].mark.color === activeToolSettings.marker.color) {
+                                delete annotations[annotationKey].mark;
+                            } else {
+                                annotations[annotationKey].mark = { ...activeToolSettings.marker };
+                            }
+                            cellNeedsDomUpdate = true;
+                        } else if (activeTool === 'bgColor') {
+                            if (annotations[annotationKey].bgColor === activeToolSettings.bgColor.color) {
+                                delete annotations[annotationKey].bgColor;
+                            } else {
+                                annotations[annotationKey].bgColor = activeToolSettings.bgColor.color;
+                            }
+                            cellNeedsDomUpdate = true;
                         }
 
-                        monthDiv.classList.toggle('visible', isVisible);
-                        if(isVisible) hasVisibleMonths = true;
-
-                        const monthNameElement = monthDiv.querySelector('.month-name');
-                        if (monthNameElement) {
-                            const existingSuffix = monthNameElement.querySelector('.year-suffix');
-                            if(existingSuffix) existingSuffix.remove();
-                            if (isVisible && selectedView === 'school' && monthYear === nextYear && schoolYearMonthsNext.includes(monthIndex)) {
-                                monthNameElement.insertAdjacentHTML('beforeend', `<span class="year-suffix">(${nextYear})</span>`);
+                        if (cellNeedsDomUpdate) {
+                            saveAnnotations();
+                            const annotationsWrapper = cell.querySelector('.annual-day-annotations-wrapper');
+                            if (annotationsWrapper) {
+                                annotationsWrapper.innerHTML = '';
+                                if (annotations[annotationKey].bgColor) annotationsWrapper.innerHTML += `<div class="annual-day-bg-highlight" style="background-color: ${annotations[annotationKey].bgColor} !important;"></div>`;
+                                if (annotations[annotationKey].mark) annotationsWrapper.innerHTML += `<span class="day-mark-symbol" style="color: ${annotations[annotationKey].mark.color};">${annotations[annotationKey].mark.type === 'V' ? '✓' : '✕'}</span>`;
                             }
                         }
-                    });
-
-                     calendarContainer.style.display = hasVisibleMonths ? 'flex' : 'none';
-                }
-
-
-                function generateRequiredCalendars() {
-                    const baseYear = parseInt(yearSelect.value, 10);
-                    if (isNaN(baseYear) || baseYear < 1000 || baseYear > 3000) {
-                        alert("Por favor, introduce un año válido (ej. 2024).");
-                        yearSelect.value = new Date().getFullYear();
-                        generateRequiredCalendars(); // Recalculate with valid year
-                        return;
                     }
-                    const nextYear = baseYear + 1;
-
-                    calendarContainer.innerHTML = '';
-
-                    let fullCalendarHTML = '';
-                    for (let i = 0; i < 12; i++) { fullCalendarHTML += createMonthHTML(baseYear, i); }
-                    for (let i = 0; i < 12; i++) { fullCalendarHTML += createMonthHTML(nextYear, i); }
-
-                    calendarContainer.innerHTML = fullCalendarHTML;
-                    updateVisibleMonthsAndTitle();
                 }
 
-                function handleTitleEdit(event) {
-                     const newTitle = event.target.textContent.trim();
-                     currentAnnualTitle = newTitle || "Calendario Anual";
-                     event.target.textContent = currentAnnualTitle;
-                      if(currentView === 'annual') {
-                          pageTitleElement.textContent = currentAnnualTitle;
-                      }
-                     console.log("Annual title updated (in memory):", currentAnnualTitle);
-                }
-
-                function init() {
-                     console.log("Inicializando Vista Anual");
-                     const today = new Date();
-                     const currentYear = today.getFullYear();
-                     const currentMonth = today.getMonth();
-                     let schoolYearStartYear = (currentMonth >= 8) ? currentYear : currentYear - 1;
-
-                     yearSelect.value = schoolYearStartYear;
-                     if (schoolYearRadio) schoolYearRadio.checked = true;
-                     else console.error("Radio #viewSchoolYear no encontrado.");
-
-                     if (mainTitleElement) mainTitleElement.textContent = currentAnnualTitle;
-
-                     yearSelect.addEventListener('change', generateRequiredCalendars);
-                     viewRadios.forEach(radio => { radio.addEventListener('change', updateVisibleMonthsAndTitle); });
-
-                     if (mainTitleElement) {
-                         mainTitleElement.addEventListener('blur', handleTitleEdit);
-                         mainTitleElement.addEventListener('keypress', (e) => {
-                             if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
-                         });
-                     }
-
-                     generateRequiredCalendars();
-                }
-
-                return { init };
-
+                function init() { loadAnnualSettings(); loadAnnotations(); yearSelect.value = currentAnnualSettings.startYear; const currentViewTypeRadio = wrapper.querySelector(`input[name="viewSelectionAnnual"][value="${currentAnnualSettings.viewType}"]`); if (currentViewTypeRadio) currentViewTypeRadio.checked = true; else if (schoolYearRadio) schoolYearRadio.checked = true; if (mainTitleElement) mainTitleElement.textContent = currentAnnualSettings.title; yearSelect.onchange = generateRequiredCalendars; viewRadios.forEach(radio => radio.onchange = () => { currentAnnualSettings.viewType = radio.value; updateVisibleMonthsAndTitle(); saveAnnualSettings(); }); if (mainTitleElement) { mainTitleElement.onblur = handleTitleEdit; mainTitleElement.onkeypress = e => { if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); } }; } calendarContainer.onclick = handleAnnualCellClick; generateRequiredCalendars(); }
+                return { init, getCurrentTitle: () => currentAnnualSettings.title, generateRequiredCalendars };
             })();
 
-            // --- Lógica de la Vista Mensual ---
              const monthlyViewLogic = (() => {
-                const wrapper = document.getElementById('monthly-view-wrapper');
-                 if (!wrapper) return { init: () => console.warn("Monthly view wrapper not found"), getCurrentSettings: () => null };
-
-                const mainTitleElement = wrapper.querySelector('#monthly-main-title');
-                const monthSelect = wrapper.querySelector('#monthly-month-select');
-                const yearSelect = wrapper.querySelector('#monthly-year-select');
-                const calendarBody = wrapper.querySelector('#calendar-body');
-                const calendarTitle = wrapper.querySelector('#calendar-title');
-                const calendarTableHead = wrapper.querySelector('.calendar-table thead tr');
-                const settingsModalElement = document.getElementById('settingsModal');
-                const settingsModal = settingsModalElement ? new bootstrap.Modal(settingsModalElement) : null;
-                const saveSettingsButton = document.getElementById('save-settings-button');
-
-                const startDayMondayRadio = document.getElementById('startDayMonday');
-                const startDaySundayRadio = document.getElementById('startDaySunday');
-                const highlightWeekendsSwitch = document.getElementById('highlightWeekends');
-                const themeSelect = document.getElementById('theme-select');
-                const lineThicknessSlider = document.getElementById('line-thickness-slider');
-                const lineThicknessValueSpan = document.getElementById('line-thickness-value');
-                const fontFamilySelect = document.getElementById('font-family-select');
-
-                const bodyElement = document.body;
-                const rootElement = document.documentElement;
-
-                const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-                const dayNamesShort = {
-                     mondayFirst: ["L", "M", "X", "J", "V", "S", "D"],
-                     sundayFirst: ["D", "L", "M", "X", "J", "V", "S"]
-                }
-
-                const defaultSettings = {
-                    mainTitle: "Calendario Mensual Personalizable",
-                    startDayOfWeek: 1,
-                    highlightWeekends: true,
-                    theme: 'contrast',
-                    lineWidth: 1.5,
-                    fontFamily: "'Lato', sans-serif"
-                };
-
-                let currentSettings = { ...defaultSettings };
-
-                 function applyTheme(themeValue) {
-                     const allThemeValues = [
-                         'contrast', 'default', 'pastel-rose', 'pastel-mint', 'serene-sky',
-                         'soft-lavender', 'peach-dream', 'lemon-zest', 'aqua-mist',
-                         'coral-blush', 'spring-meadow', 'sandstone'
-                     ];
-                     const allThemeClasses = allThemeValues.map(val => `theme-${val}`);
-
-                     bodyElement.classList.remove(...allThemeClasses);
-
-                     const validThemeValue = allThemeValues.includes(themeValue) ? themeValue : defaultSettings.theme;
-                     const validThemeClass = `theme-${validThemeValue}`;
-
-                     bodyElement.classList.add(validThemeClass);
-                     currentSettings.theme = validThemeValue;
-                     console.log(`Applied theme: ${validThemeClass}`);
-                 }
-
-                function applyLineThickness(width) {
-                    const widthValue = parseFloat(width).toFixed(1);
-                    rootElement.style.setProperty('--calendar-border-width', `${widthValue}px`);
-                    if(lineThicknessValueSpan) lineThicknessValueSpan.textContent = widthValue;
-                    currentSettings.lineWidth = widthValue;
-                }
-
-                function applyFontFamily(font) {
-                    const safeFont = font || defaultSettings.fontFamily;
-                    rootElement.style.setProperty('--calendar-font-family', safeFont);
-                    currentSettings.fontFamily = safeFont;
-                }
-
-                 function applyMainTitle(title) {
-                    const safeTitle = title ? title.trim() : defaultSettings.mainTitle;
-                    const finalTitle = safeTitle || defaultSettings.mainTitle;
-                    if (mainTitleElement) mainTitleElement.textContent = finalTitle;
-                    if (currentView === 'monthly') {
-                        pageTitleElement.textContent = finalTitle;
-                    }
-                    currentSettings.mainTitle = finalTitle;
-                 }
-
-                function loadSettings() {
-                    try {
-                        const storedSettings = localStorage.getItem('calendarSettingsV3');
-                        if (storedSettings) {
-                             currentSettings = { ...defaultSettings, ...JSON.parse(storedSettings) };
-                        } else {
-                             currentSettings = { ...defaultSettings };
-                        }
-                    } catch (error) {
-                        console.error("Error al cargar la configuración:", error);
-                        currentSettings = { ...defaultSettings };
-                    }
-
-                    applyMainTitle(currentSettings.mainTitle);
-
-                    if(startDayMondayRadio) startDayMondayRadio.checked = currentSettings.startDayOfWeek === 1;
-                    if(startDaySundayRadio) startDaySundayRadio.checked = currentSettings.startDayOfWeek === 0;
-                    if(highlightWeekendsSwitch) highlightWeekendsSwitch.checked = currentSettings.highlightWeekends;
-                    if(themeSelect) themeSelect.value = currentSettings.theme;
-                    if(lineThicknessSlider) lineThicknessSlider.value = currentSettings.lineWidth;
-                    if(fontFamilySelect) fontFamilySelect.value = currentSettings.fontFamily;
-
-                    applyTheme(currentSettings.theme);
-                    applyLineThickness(currentSettings.lineWidth);
-                    applyFontFamily(currentSettings.fontFamily);
-                }
-
-                function saveSettingsToLocalStorage() {
-                    try {
-                        currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek);
-                        currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends;
-
-                        localStorage.setItem('calendarSettingsV3', JSON.stringify(currentSettings));
-                        console.log("Configuración mensual guardada:", currentSettings);
-                    } catch (error) {
-                        console.error("Error al guardar la configuración mensual:", error);
-                    }
-                }
-
-                function handleSaveButtonClick() {
-                     currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek);
-                     currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends;
-
-                     saveSettingsToLocalStorage();
-                     if(settingsModal) settingsModal.hide();
-
-                     generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value));
-                }
-
-
-                function handleTitleEdit(event) {
-                     applyMainTitle(event.target.textContent);
-                     saveSettingsToLocalStorage();
-                 }
-
-
-                function populateYears() {
-                    const currentYear = new Date().getFullYear();
-                    const startYear = currentYear - 10; const endYear = currentYear + 10;
-                    yearSelect.innerHTML = '';
-                    for (let year = startYear; year <= endYear; year++) {
-                        const option = document.createElement('option');
-                        option.value = year; option.textContent = year;
-                        yearSelect.appendChild(option);
-                    }
-                }
-
+                const wrapper = document.getElementById('monthly-view-wrapper'); if (!wrapper) return { init: () => {}, getCurrentSettings: () => null, generateCalendar: () => {} };
+                const mainTitleElement = wrapper.querySelector('#monthly-main-title'); const monthSelect = wrapper.querySelector('#monthly-month-select'); const yearSelect = wrapper.querySelector('#monthly-year-select'); const calendarBody = wrapper.querySelector('#calendar-body'); const calendarTitle = wrapper.querySelector('#calendar-title'); const calendarTableHead = wrapper.querySelector('.calendar-table thead tr'); const settingsModalElement = document.getElementById('settingsModal'); const settingsModal = settingsModalElement ? new bootstrap.Modal(settingsModalElement) : null; const saveSettingsButton = document.getElementById('save-settings-button'); const startDayMondayRadio = document.getElementById('startDayMonday'); const startDaySundayRadio = document.getElementById('startDaySunday'); const highlightWeekendsSwitch = document.getElementById('highlightWeekends'); const themeSelect = document.getElementById('theme-select'); const lineThicknessSlider = document.getElementById('line-thickness-slider'); const lineThicknessValueSpan = document.getElementById('line-thickness-value'); const fontFamilySelect = document.getElementById('font-family-select'); const bodyElement = document.body; const rootElement = document.documentElement;
+                const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]; const dayNamesShort = { mondayFirst: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"], sundayFirst: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"] }; const defaultSettings = { mainTitle: "Calendario Mensual", startDayOfWeek: 1, highlightWeekends: true, theme: 'contrast', lineWidth: 1.5, fontFamily: "'Lato', sans-serif", currentMonth: new Date().getMonth(), currentYear: new Date().getFullYear() }; let currentSettings = { ...defaultSettings };
+                function applyTheme(themeValue) { const allThemeValues = ['contrast', 'default', 'pastel-rose', 'pastel-mint', 'serene-sky', 'soft-lavender', 'peach-dream', 'lemon-zest', 'aqua-mist', 'coral-blush', 'spring-meadow', 'sandstone']; const allThemeClasses = allThemeValues.map(val => `theme-${val}`); bodyElement.classList.remove(...allThemeClasses); const validThemeValue = allThemeValues.includes(themeValue) ? themeValue : defaultSettings.theme; bodyElement.classList.add(`theme-${validThemeValue}`); currentSettings.theme = validThemeValue; }
+                function applyLineThickness(width) { const widthValue = parseFloat(width).toFixed(1); rootElement.style.setProperty('--calendar-border-width', `${widthValue}px`); if (lineThicknessValueSpan) lineThicknessValueSpan.textContent = widthValue; currentSettings.lineWidth = widthValue; }
+                function applyFontFamily(font) { const safeFont = font || defaultSettings.fontFamily; rootElement.style.setProperty('--calendar-font-family', safeFont); currentSettings.fontFamily = safeFont; }
+                function applyMainTitle(title) { const safeTitle = title ? title.trim() : defaultSettings.mainTitle; const finalTitle = safeTitle || defaultSettings.mainTitle; if (mainTitleElement) mainTitleElement.textContent = finalTitle; if (currentView === 'monthly') pageTitleElement.textContent = finalTitle; currentSettings.mainTitle = finalTitle; }
+                function loadMonthlySettings() { try { const storedSettings = localStorage.getItem(MONTHLY_SETTINGS_STORAGE_KEY); if (storedSettings) currentSettings = { ...defaultSettings, ...JSON.parse(storedSettings) }; } catch (error) {} applyMainTitle(currentSettings.mainTitle); if (startDayMondayRadio) startDayMondayRadio.checked = currentSettings.startDayOfWeek === 1; if (startDaySundayRadio) startDaySundayRadio.checked = currentSettings.startDayOfWeek === 0; if (highlightWeekendsSwitch) highlightWeekendsSwitch.checked = currentSettings.highlightWeekends; if (themeSelect) themeSelect.value = currentSettings.theme; if (lineThicknessSlider) lineThicknessSlider.value = currentSettings.lineWidth; if (fontFamilySelect) fontFamilySelect.value = currentSettings.fontFamily; applyTheme(currentSettings.theme); applyLineThickness(currentSettings.lineWidth); applyFontFamily(currentSettings.fontFamily); monthSelect.value = currentSettings.currentMonth; yearSelect.value = currentSettings.currentYear; }
+                function saveMonthlySettingsToLocalStorage() { try { currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek); currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends; currentSettings.currentMonth = parseInt(monthSelect.value); currentSettings.currentYear = parseInt(yearSelect.value); localStorage.setItem(MONTHLY_SETTINGS_STORAGE_KEY, JSON.stringify(currentSettings)); } catch (error) {} }
+                function handleSaveSettingsModalButtonClick() { currentSettings.startDayOfWeek = parseInt(document.querySelector('input[name="startDayOfWeek"]:checked')?.value || defaultSettings.startDayOfWeek); currentSettings.highlightWeekends = highlightWeekendsSwitch ? highlightWeekendsSwitch.checked : defaultSettings.highlightWeekends; saveMonthlySettingsToLocalStorage(); if (settingsModal) settingsModal.hide(); generateCalendar(currentSettings.currentYear, currentSettings.currentMonth); }
+                function handleTitleEdit(event) { applyMainTitle(event.target.textContent); saveMonthlySettingsToLocalStorage(); }
+                function populateYears() { const currentSelectedYear = parseInt(yearSelect.value) || new Date().getFullYear(); const startYear = currentSelectedYear - 10; const endYear = currentSelectedYear + 10; yearSelect.innerHTML = ''; for (let year = startYear; year <= endYear; year++) { const option = document.createElement('option'); option.value = year; option.textContent = year; yearSelect.appendChild(option); } yearSelect.value = currentSelectedYear; }
+                
                 function generateCalendar(year, month) {
-                    if (isNaN(year) || isNaN(month) || month < 0 || month > 11) {
-                        console.error(`Datos inválidos para generar calendario mensual: Año=${year}, Mes=${month}`);
-                        calendarTitle.textContent = "Error";
-                        calendarBody.innerHTML = '<tr><td colspan="7">Selecciona mes/año válidos.</td></tr>';
-                        return;
-                    }
-
-                    if (!calendarBody || !calendarTableHead || !calendarTitle) {
-                        console.error("Elementos del calendario mensual no encontrados.");
-                        return;
-                    }
-
+                    if (isNaN(year) || isNaN(month) || month < 0 || month > 11) { calendarTitle.textContent = "Error"; calendarBody.innerHTML = '<tr><td colspan="7">Error.</td></tr>'; return; }
+                    currentSettings.currentYear = year; currentSettings.currentMonth = month;
                     calendarBody.innerHTML = ''; calendarTableHead.innerHTML = '';
-                    const { startDayOfWeek: startDaySetting, highlightWeekends } = currentSettings;
-                    const currentDayNames = startDaySetting === 1 ? dayNamesShort.mondayFirst : dayNamesShort.sundayFirst;
-
-                    currentDayNames.forEach(day => {
-                        const th = document.createElement('th'); th.scope = 'col'; th.textContent = day;
-                        calendarTableHead.appendChild(th);
-                    });
-
-                    const firstDayOfMonth = new Date(year, month, 1);
-                    const lastDayOfMonth = new Date(year, month + 1, 0);
-                    const daysInMonth = lastDayOfMonth.getDate();
-                    let firstDayIndex = startDaySetting === 1 ? (firstDayOfMonth.getDay() + 6) % 7 : firstDayOfMonth.getDay();
-
-                    calendarTitle.textContent = `${monthNames[month]} ${year}`;
-
-                    let date = 1; let currentWeekRow = document.createElement('tr');
-                    for (let i = 0; i < firstDayIndex; i++) {
-                        const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell);
-                    }
-
+                    const { startDayOfWeek: startDaySetting, highlightWeekends } = currentSettings; const currentDayNames = startDaySetting === 1 ? dayNamesShort.mondayFirst : dayNamesShort.sundayFirst;
+                    currentDayNames.forEach(day => { const th = document.createElement('th'); th.scope = 'col'; th.textContent = day; calendarTableHead.appendChild(th); });
+                    const firstDayOfMonth = new Date(year, month, 1); const daysInMonth = new Date(year, month + 1, 0).getDate(); let firstDayIndex = startDaySetting === 1 ? (firstDayOfMonth.getDay() + 6) % 7 : firstDayOfMonth.getDay();
+                    calendarTitle.textContent = `${monthNames[month]} ${year}`; let date = 1; let currentWeekRow = document.createElement('tr');
+                    for (let i = 0; i < firstDayIndex; i++) { const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell); }
                     while (date <= daysInMonth) {
-                        if (currentWeekRow.children.length === 7) {
-                            calendarBody.appendChild(currentWeekRow); currentWeekRow = document.createElement('tr');
-                        }
-                        const cell = document.createElement('td');
+                        if (currentWeekRow.children.length === 7) { calendarBody.appendChild(currentWeekRow); currentWeekRow = document.createElement('tr'); }
+                        const cell = document.createElement('td'); cell.dataset.day = date; cell.dataset.month = month; cell.dataset.year = year;
                         const dayNumberSpan = document.createElement('span'); dayNumberSpan.classList.add('day-number'); dayNumberSpan.textContent = date;
-                        cell.appendChild(dayNumberSpan);
+                        const contentWrapper = document.createElement('div'); contentWrapper.classList.add('day-content-wrapper');
+                        const annotationKey = getAnnotationKey(year, month, date); const dayAnnotation = annotations[annotationKey] || {};
+                        
+                        // Aplicar alineación vertical basada en anotación o por defecto de la herramienta
+                        const verticalAlign = (dayAnnotation.text && dayAnnotation.text.textAlignVertical) ? 
+                                              dayAnnotation.text.textAlignVertical : monthlyToolSettings.pencil.textAlignVertical;
+                        contentWrapper.style.justifyContent = verticalAlign;
 
-                        const currentDate = new Date(year, month, date);
-                        const dayOfWeek = currentDate.getDay();
-                        if (highlightWeekends && (dayOfWeek === 0 || dayOfWeek === 6)) {
+                        if (dayAnnotation.text) {
+                            const textDiv = document.createElement('div'); textDiv.classList.add('day-annotation-text');
+                            textDiv.textContent = dayAnnotation.text.contenido;
+                            textDiv.style.fontFamily = dayAnnotation.text.fuente || monthlyToolSettings.pencil.font;
+                            textDiv.style.fontSize = dayAnnotation.text.tamano || monthlyToolSettings.pencil.size;
+                            textDiv.style.color = dayAnnotation.text.color || monthlyToolSettings.pencil.color;
+                            textDiv.style.fontWeight = dayAnnotation.text.bold ? 'bold' : 'normal';
+                            textDiv.style.fontStyle = dayAnnotation.text.italic ? 'italic' : 'normal';
+                            textDiv.style.textAlign = dayAnnotation.text.textAlign || 'left';
+                            contentWrapper.appendChild(textDiv);
+                        }
+                        if (dayAnnotation.mark) { const markSpan = document.createElement('span'); markSpan.classList.add('day-mark-symbol'); markSpan.textContent = dayAnnotation.mark.type === 'V' ? '✓' : '✕'; markSpan.style.color = dayAnnotation.mark.color; contentWrapper.appendChild(markSpan); }
+                        if (dayAnnotation.bgColor) cell.style.setProperty('background-color', dayAnnotation.bgColor, 'important');
+                        
+                        cell.appendChild(dayNumberSpan); cell.appendChild(contentWrapper);
+                        const currentDate = new Date(year, month, date); const dayOfWeek = currentDate.getDay();
+                        if (highlightWeekends && !dayAnnotation.bgColor && ((startDaySetting === 1 && (dayOfWeek === 6 || dayOfWeek === 0)) || (startDaySetting === 0 && (dayOfWeek === 0 || dayOfWeek === 6)))) {
                             cell.classList.add('weekend-cell');
+                        } else {
+                            cell.classList.remove('weekend-cell');
                         }
                         currentWeekRow.appendChild(cell); date++;
                     }
-                    while (currentWeekRow.children.length > 0 && currentWeekRow.children.length < 7) {
-                        const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell);
+                    while (currentWeekRow.children.length > 0 && currentWeekRow.children.length < 7) { const emptyCell = document.createElement('td'); emptyCell.classList.add('empty-cell'); currentWeekRow.appendChild(emptyCell); }
+                    if (currentWeekRow.children.length > 0) calendarBody.appendChild(currentWeekRow);
+                    saveMonthlySettingsToLocalStorage();
+                }
+
+                function handleMonthlyCellClick(event) {
+                    const cell = event.target.closest('td:not(.empty-cell)');
+                    if (!cell) return;
+
+                    const day = parseInt(cell.dataset.day, 10);
+                    const month = parseInt(cell.dataset.month, 10);
+                    const year = parseInt(cell.dataset.year, 10);
+                    const contentWrapper = cell.querySelector('.day-content-wrapper');
+                    const isRangeToolActive = activeTool && (activeTool === 'marker' || activeTool === 'bgColor');
+
+                    if (event.shiftKey && shiftSelectionAnchor && shiftSelectionAnchor.view === 'monthly' && isRangeToolActive) {
+                        // Lógica de Selección de Rango (Shift + Clic)
+                        const start = new Date(shiftSelectionAnchor.year, shiftSelectionAnchor.month, shiftSelectionAnchor.day);
+                        const end = new Date(year, month, day);
+
+                        const loopStartDate = start <= end ? new Date(start.getFullYear(), start.getMonth(), start.getDate()) : new Date(end.getFullYear(), end.getMonth(), end.getDate());
+                        const loopEndDate = start <= end ? new Date(end.getFullYear(), end.getMonth(), end.getDate()) : new Date(start.getFullYear(), start.getMonth(), start.getDate());
+                        
+                        let iterDate = new Date(loopStartDate);
+
+                        while (iterDate.getTime() <= loopEndDate.getTime()) {
+                            // Solo aplicar si la fecha está dentro del mes actualmente visualizado
+                            if (iterDate.getFullYear() === currentSettings.currentYear && iterDate.getMonth() === currentSettings.currentMonth) {
+                                const dayToModify = iterDate.getDate();
+                                const key = getAnnotationKey(currentSettings.currentYear, currentSettings.currentMonth, dayToModify);
+                                annotations[key] = annotations[key] || {};
+
+                                if (activeTool === 'marker') {
+                                    annotations[key].mark = { ...activeToolSettings.marker };
+                                } else if (activeTool === 'bgColor') {
+                                    annotations[key].bgColor = activeToolSettings.bgColor.color;
+                                }
+                            }
+                            iterDate.setDate(iterDate.getDate() + 1);
+                        }
+                        saveAnnotations();
+                        generateCalendar(currentSettings.currentYear, currentSettings.currentMonth);
+                        // No resetear ancla para permitir más Shift+clics desde el mismo ancla
+                    } else {
+                        // Lógica de Clic Único (o clic con herramienta no de rango)
+                        if (isRangeToolActive) { // Clic normal con marker/bgColor: establece el ancla
+                            shiftSelectionAnchor = { year, month, day, view: 'monthly' };
+                        } else if (!activeTool || activeTool === 'pencil') { // Clic con cursor o lápiz
+                            shiftSelectionAnchor = null; // Resetea ancla
+                        }
+
+                        const annotationKey = getAnnotationKey(year, month, day);
+                        annotations[annotationKey] = annotations[annotationKey] || {};
+                        let needsRedraw = false;
+
+                        if (activeTool === 'pencil') {
+                            let textDiv = cell.querySelector('.day-annotation-text');
+                            if (!textDiv) { 
+                                textDiv = document.createElement('div'); 
+                                textDiv.classList.add('day-annotation-text'); 
+                                // Asegurar que el nuevo textDiv se añade en el orden correcto si hay marcas
+                                const existingMark = contentWrapper.querySelector('.day-mark-symbol');
+                                if (existingMark) {
+                                    contentWrapper.insertBefore(textDiv, existingMark);
+                                } else {
+                                    contentWrapper.appendChild(textDiv);
+                                }
+                            }
+                            textDiv.contentEditable = "true";
+                            textDiv.style.fontFamily = activeToolSettings.pencil.font; 
+                            textDiv.style.fontSize = activeToolSettings.pencil.size; 
+                            textDiv.style.color = activeToolSettings.pencil.color;
+                            textDiv.style.fontWeight = activeToolSettings.pencil.bold ? 'bold' : 'normal'; 
+                            textDiv.style.fontStyle = activeToolSettings.pencil.italic ? 'italic' : 'normal';
+                            textDiv.style.textAlign = activeToolSettings.pencil.textAlign;
+                            
+                            if(contentWrapper) contentWrapper.style.justifyContent = activeToolSettings.pencil.textAlignVertical;
+                            
+                            textDiv.focus();
+                            textDiv.onblur = () => {
+                                textDiv.contentEditable = "false"; 
+                                const content = textDiv.textContent.trim();
+                                if (content) {
+                                    annotations[annotationKey].text = {
+                                        contenido: content, 
+                                        fuente: activeToolSettings.pencil.font, 
+                                        tamano: activeToolSettings.pencil.size, 
+                                        color: activeToolSettings.pencil.color,
+                                        bold: activeToolSettings.pencil.bold, 
+                                        italic: activeToolSettings.pencil.italic, 
+                                        textAlign: activeToolSettings.pencil.textAlign,
+                                        textAlignVertical: activeToolSettings.pencil.textAlignVertical // Guardar alineación vertical
+                                    };
+                                } else { 
+                                    delete annotations[annotationKey].text; 
+                                    textDiv.remove(); 
+                                }
+                                saveAnnotations();
+                                // No es necesario redibujar todo el calendario, solo el justify-content si cambió
+                                if (contentWrapper && annotations[annotationKey].text) {
+                                   contentWrapper.style.justifyContent = annotations[annotationKey].text.textAlignVertical;
+                                } else if (contentWrapper) {
+                                   contentWrapper.style.justifyContent = monthlyToolSettings.pencil.textAlignVertical; // Reset a default
+                                }
+                            };
+                        } else if (activeTool === 'marker') { 
+                            const currentMark = annotations[annotationKey].mark; 
+                            if (currentMark && currentMark.type === activeToolSettings.marker.type && currentMark.color === activeToolSettings.marker.color) {
+                                delete annotations[annotationKey].mark; 
+                            } else {
+                                annotations[annotationKey].mark = { ...activeToolSettings.marker }; 
+                            }
+                            needsRedraw = true;
+                        } else if (activeTool === 'bgColor') { 
+                            if (annotations[annotationKey].bgColor === activeToolSettings.bgColor.color) { 
+                                delete annotations[annotationKey].bgColor; 
+                            } else { 
+                                annotations[annotationKey].bgColor = activeToolSettings.bgColor.color; 
+                            } 
+                            needsRedraw = true; // Siempre redibujar para bgColor para actualizar el estilo de la celda.
+                        }
+                        
+                        if (needsRedraw) { 
+                            saveAnnotations(); 
+                            generateCalendar(year, month); 
+                        }
                     }
-                     if (currentWeekRow.children.length > 0) calendarBody.appendChild(currentWeekRow);
                 }
-
-                function init() {
-                     console.log("Inicializando Vista Mensual");
-                     loadSettings();
-                     populateYears();
-
-                     const today = new Date();
-                     const currentMonth = today.getMonth();
-                     const currentYear = today.getFullYear();
-
-                     monthSelect.value = currentMonth;
-                     yearSelect.value = currentYear;
-
-                     generateCalendar(currentYear, currentMonth);
-
-                     monthSelect.addEventListener('change', () => generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)));
-                     yearSelect.addEventListener('change', () => generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)));
-
-                      if (mainTitleElement) {
-                         mainTitleElement.addEventListener('blur', handleTitleEdit);
-                         mainTitleElement.addEventListener('keypress', (e) => {
-                             if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
-                         });
-                      }
-
-                     if(themeSelect) themeSelect.addEventListener('change', (e) => { applyTheme(e.target.value); saveSettingsToLocalStorage(); });
-                     if(lineThicknessSlider) {
-                         lineThicknessSlider.addEventListener('input', (e) => { applyLineThickness(e.target.value); });
-                         lineThicknessSlider.addEventListener('change', saveSettingsToLocalStorage);
-                     }
-                     if(fontFamilySelect) fontFamilySelect.addEventListener('change', (e) => { applyFontFamily(e.target.value); saveSettingsToLocalStorage(); });
-                     if(saveSettingsButton) saveSettingsButton.addEventListener('click', handleSaveButtonClick);
-
-                     if (currentView === 'monthly') {
-                         pageTitleElement.textContent = currentSettings.mainTitle;
-                     }
-                }
-
-                // Expose function to get current settings for page title update
-                function getCurrentSettings() {
-                    return { ...currentSettings };
-                }
-
-
-                return { init, getCurrentSettings };
-
+                
+                function init() { loadMonthlySettings(); loadAnnotations(); populateYears(); generateCalendar(currentSettings.currentYear, currentSettings.currentMonth); monthSelect.onchange = () => generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)); yearSelect.onchange = () => { populateYears(); generateCalendar(parseInt(yearSelect.value), parseInt(monthSelect.value)); }; if (mainTitleElement) { mainTitleElement.onblur = handleTitleEdit; mainTitleElement.onkeypress = e => { if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); } }; } if (themeSelect) themeSelect.onchange = e => { applyTheme(e.target.value); saveMonthlySettingsToLocalStorage(); }; if (lineThicknessSlider) { lineThicknessSlider.oninput = e => { applyLineThickness(e.target.value); }; lineThicknessSlider.onchange = () => saveMonthlySettingsToLocalStorage(); } if (fontFamilySelect) fontFamilySelect.onchange = e => { applyFontFamily(e.target.value); saveMonthlySettingsToLocalStorage(); }; if (saveSettingsButton) saveSettingsButton.onclick = handleSaveSettingsModalButtonClick; calendarBody.onclick = handleMonthlyCellClick; if (currentView === 'monthly') pageTitleElement.textContent = currentSettings.mainTitle; }
+                function getCurrentSettings() { return { ...currentSettings }; }
+                return { init, getCurrentSettings, generateCalendar };
             })();
 
-            // --- Inicialización General ---
+            initializeToolbars(); 
             if (annualViewLogic) annualViewLogic.init();
             if (monthlyViewLogic) monthlyViewLogic.init();
-
-            // Set the initial active view defined earlier
-            setActiveView(currentView);
-
+            setActiveView(currentView); // Establecer la vista inicial y la configuración de la barra de herramientas
         });
     </script>
 
