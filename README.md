@@ -10,7 +10,7 @@ Este proyecto proporciona una interfaz web interactiva para crear calendarios en
 
 ## 🖼️ Captura de Pantalla / Demo
 
-* Captura de pantalla del calendario para rellenar en papel.
+* Captura de pantalla del calendario para rellenar.
 
 ![Captura de Pantalla del Generador de Calendarios](screenshot.png) 
 
